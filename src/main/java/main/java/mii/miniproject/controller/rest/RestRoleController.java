@@ -46,10 +46,4 @@ public class RestRoleController {
     public Role delete(@PathVariable Long id) {
         return roleService.delete(id);
     }
-
-    // @GetMapping("/entitas/{id}")
-    // public List<Entitas> getListCountryByIdRegion(@PathVariable Long id) {
-    //     return countryService.getAll().stream().filter(country -> country.getRegion().getId() == id)
-    //             .collect(Collectors.toList());
-    // }
 }

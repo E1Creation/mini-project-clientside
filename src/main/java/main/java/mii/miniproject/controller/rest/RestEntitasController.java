@@ -45,10 +45,4 @@ public class RestEntitasController {
     public Entitas delete(@PathVariable Long id) {
         return entitasService.delete(id);
     }
-
-    // @GetMapping("/entitas/{id}")
-    // public List<Entitas> getListCountryByIdRegion(@PathVariable Long id) {
-    //     return countryService.getAll().stream().filter(country -> country.getRegion().getId() == id)
-    //             .collect(Collectors.toList());
-    // }
 }
