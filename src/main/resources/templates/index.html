@@ -3,67 +3,122 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <link rel="icon" type="image/png" href="img/logo.png" style="width: 50px;">
+    <title>DGSchool</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href="./css/index.css" rel="stylesheet">
+    <link th:href="@{css/index.css}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{css/font-awesome.min.css}">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     <style>
         #banner{
-          background: url('https://images.pexels.com/photos/2831794/pexels-photo-2831794.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat fixed;
+          background: url('https://images.pexels.com/photos/267586/pexels-photo-267586.jpeg') no-repeat fixed;
           background-size: cover;
-          min-height: 650px;
           position: relative;
+
         }
         @media (max-width: 1024px){
         #banner{
           background-attachment: scroll;
           }
         }
+        .bg-color{
+          background-color:RGBA(13, 70, 83, 0.78);
+          min-height: 650px;
+        }
         .text{
           text-align: justify;
         }
+        .nav-link {
+          color: white;
+        }
+        i{
+          color: #0cb8b6;
+        }
+        .banner-info{
+	      padding-top: 190px;
+        }
+        .row-facility {
+          background: url('https://static9.depositphotos.com/1594308/1131/i/600/depositphotos_11312029-stock-photo-funny-kids.jpg') no-repeat fixed;
+
+        }
+
 
     </style>
 
   </head>
   <body>
-    <nav id="navbar-example2" class="navbar fixed-top bg-light px-3">
-      <a class="navbar-brand" href="#">
-        <img src="https://bitlabs.id/blog/wp-content/uploads/2021/04/contoh-desain-logo-burger-king.png" alt="Bootstrap" width="30" height="24">
+    <section id="home">
+    <nav class="navbar fixed-top px-3"  style="background-color: RGBA(13, 70, 83, 0.78);">
+      <a class="navbar-brand ms-5" href="#">
+        <img src="image/logo.png" alt="Bootstrap" width="200" height="30">
       </a>
-        <ul class="nav nav-pills">
+        <ul class="nav nav-pills me-5">
         <li class="nav-item">
-          <a class="nav-link" href="#scrollspyHeading1">Home</a>
+          <a class="nav-link" href="#home">HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#scrollspyHeading2">About</a>
+          <a class="nav-link" href="#profile">PROFILE</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#scrollspyHeading4">Contact</a>
+          <a class="nav-link" href="#facility">FACILITY</a>
         </li><li class="nav-item">
-          <a class="nav-link" href="#scrollspyHeading5">Login</a>
+          <a class="nav-link" href="#footer">CONTACT</a>
         </li>
+      </li><li class="nav-item">
+        <a class="nav-link" th:href="@{/login}">LOGIN</a>
+      </li>
       </ul>
     
     </nav>
     <!-- Banner -->
-    <div class="section" id="banner">
-      
+    <div class="banner" id="banner">
+      <div class="bg-color">
+        <div class="container ">
+          <div class="row">
+            <div class="banner-info" >
+              <div class="banner-logo text-center">
+                <img src="image/logo.png" class="img-responsive" style="width: 500px;">
+              </div>
+              <div class="banner-text text-center text-white mt-3">
+                <h1 class="white"><b>~DIGITAL SCHOOL~</b></h1>
+                <a href="#profile" class="btn btn mt-3" style="background-color: rgba(255, 99, 71, 0.4);">Learn More</a>
+              </div>
+              <div class="overlay-detail text-center">
+                <h1><a href="#profile"><i class="fa fa-angle-down"></i></a></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
     <!-- End Banner -->
 
     <!-- Visi Misi -->
-    <section class="vs" id="vs">
+    <section class="vs text-white" id="profile" style="background-color: RGB(50, 85, 106)">
       <div class="container">
-        <div class="row featurette mt-5 mb-5" >
+        <div class="row featurette  mb-5" >
           <h2 class="featurette-heading fw-normal lh-1 text-center mt-5 mb-5"><b>VISI & MISI</b>
             <br><hr class="botm-linee" style="margin-left: auto; margin-right: auto;">
           </h2>
           <div class="" style="text-align: justify;">
-            <h6 class="featurette-heading fw-normal">And lastly, this one. <span class="text-muted">Checkmate.</span></h6>
-            <p class="lead" >And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+            <h4 class="featurette-heading fw-normal"><b>VISI</b></h4>
+            <p class="lead">               
+              Terwujudnya insan yang berakhlak mulia, berbudaya, cerdas, berjiwa sosial, peduli lingkungan, dan siap bersaing di era globalisasi.
+            </p>
+            <h4 class="featurette-heading fw-normal"><b>MISI</b></h4>
+            <p class="lead">
+              1.  Meningkatkan dasar- dasar akhlak mulia dan budi pekerti luhur melalui kegiatan- kegiatan keagamaan, sosial, dan budaya sekolah.<br>
+              2.  Membudayakan semboyan 5S ( Senyum, Sapa, Salam, Sopan, Santun) dan SIMATETO (Permisi, Maaf, Terimakasih, Tolong)<br>
+              3.  Membina insan memiliki kemampuan akademik dan nonakademik, kreatif, berpikir kritis, pemberani, tanggung jawab, dan mandiri.<br>
+              4.  Melaksanakan pembelajaran aktif, kreatif, efektif, dan menyenangkan.<br>
+              5.  Meningkatkan kegiatan yang berwawasan IPTEK (Ilmu Pengetahuan dan Teknologi).<br>
+              6.  Melaksanakan pembiasaan hidup bersih, tertib, indah, dan sehat melalui kegiatan PHBS (Perilaku Hidup Bersih dan Sehat).<br>
+              7.  Melaksanakan kegiatan 10K (Keamanan, Kebersihan, Ketertiban, Kerindangan, Keindahan, Kekeluargaan, Kesehatan, Kecintaan, Keteladanan, dan Kedisiplinan).<br>
+              8.  Meningkatkan kepekaan sosial melalui kegiatan bimbingan, pembinaan, dan konseling.<br>
+            </p>
           </div>
         </div>
         <hr>
@@ -74,167 +129,312 @@
     <!-- Content Program -->
       <section class="program mb-5" id="scrollspyHeading1">
       <div class="container mt-5 mb-3"><br>
-      <h2 class="title pu text-center"><b>PROGRAM UNGGULAN</b>
+      <h2 class="title pu text-center mb-4"><b>PROGRAM UNGGULAN</b>
         <hr class="botm-linee text-center" style="margin-left: auto; margin-right: auto;">
       </h2>
         <div class="row mb-5">
         <div class="col-sm-6">
-          <div class="card">
-            
+          <div class="card shadow-lg">
             <div class="card-body mb-5">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <div class="row">
+                <div class="col-4">
+                  <img src="https://www.sekolahmuridmerdeka.id/wp-content/uploads/2021/08/Cambridge-English-Class-SD-01.png" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col">
+                  <h5 class="card-title" style="color: #0cb8b6;"><b>English Ambassador</b></h5>
+                  <p class="text">English as a second language, merupakan program bagi peserta didik yang dipilih
+                    sebagai perwakilan terbaik. Diharapkan peserta didik yang terpilih dapat meningkatkan keterampilan
+                    komunikasi , belajar membimbing orang lain atau mendorong rasa percaya diri para peserta didik,
+                    dan berperan agar peserta didik lain ikut tertarik untuk meningkatkan bahasa Inggris mereka.
+                  </p>
+                  <br>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div class="col-sm-6">
-          <div class="card">
+          <div class="card shadow-lg">
             <div class="card-body mb-5">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <div class="row">
+                <div class="col-4">
+                  <img src="https://sdsniagaekasari.sch.id/wp-content/uploads/2019/03/IMG20181022092640-300x225.jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col">
+                  <h5 class="card-title mb-3"  style="color: #0cb8b6;"><b>Little Doctor</b></h5>
+                  <p class="text">Program ini digunakan untuk mendukung program sehat usia 
+                    dini pada anak-anak sekolah dasar. Pentingnya melalukan kebersihan badan dan 
+                    pola hidup sehat diperlukan untuk membetuk generasi muda bersih dan sehat. 
+                    Sebagai Role Model, Dokter Kecil punya peran mengajak temannya untuk memiliki 
+                    Perilaku Hidup Bersih dan Sehat (PHBS) dari mulai cara mencuci tangan dengan benar,
+                    menjaga kebersihan di lingkungan sekitar.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="row mt-2 mb-3">
         <div class="col-sm-6">
-          <div class="card">
+          <div class="card shadow">
             <div class="card-body mb-5">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <div class="row">
+                <div class="col-4">
+                  <img src="https://sdsniagaekasari.sch.id/wp-content/uploads/2019/03/IMG_1687-600x400.jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col">
+                  <h5 class="card-title mb-3"  style="color: #0cb8b6;"><b>Leadership Spirit Development</b></h5>
+                  <p class="text">Program ini merupakan pembentukan karakter peserta didik dengan menanamkan dan melatih  kebiasaan efektif  yang bertujuan memunculkan potensi kepemimpinan /leadership  pada setiap anak. Setiap siswa diberikan peran kepemimpinan
+                    dan kesempatan untuk “tampil” pada setiap acara-acara kepemimpinan. (Petugas Upacara, Ketua Kelompok / regu).
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div class="col-sm-6 mb-3">
-          <div class="card">
+          <div class="card shadow">
             <div class="card-body mb-5">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <div class="row">
+                <div class="col-4">
+                  <img src="https://sdsniagaekasari.sch.id/wp-content/uploads/2019/03/IMG_2211-600x400.jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col">
+                  <h5 class="card-title"  style="color: #0cb8b6;"><b>Outing Class</b></h5>
+                  <p class="text">Supaya paham lebih mendalam mengenai tema pembelajaran yang sedang dipelajari, siswa diajak melakukan widya wisata ke lokasi yang sesuai. Aktivitas ini sekaligus untuk mengaplikasikan sikap dan akhlak
+                     terpuji seperti yang sudah diajarkan di kelas, serta menumbuhkan kemampuan menganalisa, berfikir kritis dan ilmiah.
+                  </p>
+                  <br>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <hr>
+      <hr class="line-limit">
     </div>
   </section>
 <!-- END Program -->
 
     <!-- Fasilitas -->
-    <section id="service" class="section-padding mt-5 mb-5">
+    <section id="facility" class="section-padding mt-5 mb-5">
       <div class="container">
         <div class="row">
           <div class="col-md-4 col-sm-4">
             <h2 class="featurette-heading fw-normal lh-1"><b>SCHOOL FASILITY</b></h2>
             <hr class="botm-line">
             <p>Ada 4 fasilitas yang akan membantu kenyamanan belajar calon siswa kami</p>
+            <div class="row shadow">
+              <img src="https://st.depositphotos.com/1000260/1279/i/600/depositphotos_12798341-stock-photo-child-with-stack-book.jpg" alt="">
+            </div>
+            
           </div>
           <div class="col-md-4 col-sm-4" style="text-align: justify;">
             <div class="service-info">
-              <div class="icon">
-                <i class="fa fa-stethoscope"></i>
-              </div>
               <div class="icon-info">
-                <h4>Complete Library</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui ea sed fuga voluptate ipsam culpa necessitatibus consectetur consequuntur temporibus modi, quam magni sunt exercitationem aliquam asperiores eos ex quos cum.</p>
+                <h4><i class="fa fa-book fa-2x" style="color: #0cb8b6;" aria-hidden="true"></i>
+                  | <b> Library & Audio Visual</b></h4>
+                <p>Sekolah memiliki perpustakaan (Library Media Center) yang dipadukan dengan ruang kreativitas siswa. Jenis koleksi yang tersedia bervariasi antara lain berupa buku-buku pengetahuan, fiksi, referensi, ensiklopedia, majalah dan surat kabar. Disamping itu tersedia pula koleksi yang berupa CD pembelajaran dan video untuk pengembangan proses belajar siswa di kelas, serta permainan edukatif seperti puzzle, balok, logico dan sebagainya.</p>
               </div>
             </div>
             <div class="service-info">
-              <div class="icon">
-                <i class="fa fa-ambulance"></i>
-              </div>
               <div class="icon-info">
-                <h4>Sports Facilities</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum esse dolorem vitae qui eum! Omnis earum amet commodi, atque dignissimos facilis veniam minima id adipisci ex ab nihil a recusandae! </p>
+                <h4><i class="fa fa-futbol-o fa-2x" aria-hidden="true"></i><b> | Sports Facilities</b></h4>
+                <p>Lapangan olahraga telah didesain untuk beragam pelajaran olahraga seperti bola basket, footsal, volley dan atletik. Lapangan yang luas dan sarana olahraga yang beragam memberi peluang lebih besar untuk dapat mengembangkan motorik kasar dan bakat anak. Lapangan dan sarana olahraga yang ada terdiri dari basket, badminton dan futsal.</p><br><br>
               </div>
             </div>
           </div>
           <div class="col-md-4 col-sm-4" style="text-align: justify;">
             <div class="service-info">
-              <div class="icon">
-                <i class="fa fa-user-md"></i>
-              </div>
               <div class="icon-info">
-                <h4>Laboratory</h4>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci accusantium doloremque aperiam maxime a deserunt. Qui pariatur ut in tempora ipsum rem quasi distinctio, eius nemo, minima a odit corporis.</p>
+                <h4><i class="fa fa-user-md fa-2x" aria-hidden="true"></i><b> | Laboratory</b></h4>
+                <p>Laboratorium IPA dilengkapi dengan sejumlah alat praktikum Science yang jumlahnya setara dengan jumlah siswa per kelasnya dengan ruangan ber-AC.
+                  . Tidak hanya laboratorium ipa saja kami juga memiliki fasilitas Laboratorium computer SSH dilengkapi dengan sejumlah computer atau PC Quad Core dengan jaringan internet yang jumlahnya setara dengan jumlah siswa per kelasnya dengan ruangan ber-AC.</p>
               </div>
             </div>
-            <div class="service-info">
-              <div class="icon">
-                <i class="fa fa-medkit"></i>
-              </div>
+            <br>
+            <div class="service-info ">
               <div class="icon-info">
-                <h4>Praying Room</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet repudiandae reiciendis, numquam repellat minima aperiam ex, fugit praesentium quidem a commodi explicabo deleniti laborum iure dicta. Vel ratione dolor suscipit.</p>
+                <h4><i class='fas fa-mosque fa-2x'></i><b> | Praying Room</b></h4>
+                <p>Mushola berada di dalam area sekolah. Untuk mendukung pelayanan terhadap jamaah, mushola dilengkapi dengan peralatan sound system yang memadai, yang sekaligus merupakan tempat aktifitas keagamaan.</p>
               </div>
             </div>
           </div>
         </div>
-        <hr>
+        <hr class="line-limit">
       </div>
     </section>
     <!--/ service-->
     
-    <section>
+    <section id="teacher">
       <div class="container mt-4">
         <div class="row featurette mb-5" >
           <div class="col-md-7">
             <h2 class="featurette-heading fw-normal lh-1"><b>MEET OURS TEACHER</b></h2>
             <hr class="botm-line">
-            <h6 class="featurette-heading fw-normal">And lastly, this one. <span class="text-muted">Checkmate.</span></h6>
-            <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+            <h2 class="featurette-heading fw-normal">Keishia Thorpe</h2>
+            <p class="lead" style="text-align: justify;">Keishia Thorpe mengajar bahasa Inggris kepada siswa kelas 12 yang merupakan pembelajar bahasa Inggris di International High School Langley Park, Bladensburg, Maryland, Amerika Serikat, 
+              sebuah sekolah di mana lebih dari 85% adalah siswa Hispanik dan 95% mengidentifikasi sebagai siswa rendah. 
+            </p>
           </div>
           <div class="col-md-5">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-    
+            <div class="card" style="width: 25rem; margin-left: auto;">
+              <img src="https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2021-11/211111-keishia-thorpe-mb-0859-6d95be.jpg" alt="">
+            </div>
           </div>
         </div>
         <hr class="4">
         <div class="row featurette mt-5 mb-5">
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-            <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+            <h2 class="featurette-heading fw-normal lh-1">Dayang Suriani</h2><br>
+            <p class="lead"style="text-align: justify;">
+              Sebagai seorang guru Bahasa Inggris, Dayang Suriani selalu berusaha mendorong para siswanya untuk bermimpi besar.Dayang mengajarkan bahasa Inggris dengan berbagai kreativitas. Salah satunya adalah mengajarkan penggunaan "Gerund" yang dikemas dengan istilah "Pertunjukan 7 Orang".
+              Dengan kreativitasnya, Dayang mampu membawa siswa-siswinya untuk meraih angka maksimal. Bahkan, pada 2017 lalu, Dayang mampu masuk sebagai 50 guru terbaik seluruh dunia menyingkirkan lebih dari 20 ribu guru lainnya di Global Teacher Prize yang digelar di Dubai.
+            </p>
           </div>
           <div class="col-md-5 order-md-1">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+            <div class="card" style="width: 25rem; margin-right: auto;">
+              <img src="https://image.akurat.co/images/uploads/images/akurat_20191125024128_54GV9o.jpg" alt="">
+            </div>
           </div>
         </div>
         <hr>
         <div class="row featurette mt-5 mb-5" >
           <div class="col-md-7">
-            <h6 class="featurette-heading fw-normal">And lastly, this one. <span class="text-muted">Checkmate.</span></h6>
-            <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+            <h2 class="featurette-heading fw-normal">Hikmah Mulia Dewi</h2>
+            <p class="lead" style="text-align: justify;">Berawal dari tiga murid, Hikmah Mulia Dewi merealisasikan mimpinya dengan mendirikan sekolah PAUD atau Preschool, dengan nama Rainbow Preschool di Pekalongan. Tak hanya bermain, Hikmah melakukan pendekatan melalui penyelidikan ilmiah dan penugasan proyek. Siswa-siswinya terus didorong untuk mengekspresikan berbagai idenya dan mendiskusikannya dengan teman-temannya.
+              Hingga kini, sekolah Rainbow telah memiliki lebih dari 150 murid. Selain itu, Hikmah juga merancang program peningkatan guru untuk menciptakan guru prasekolah yang ahli. Dengan berbagai inovasi dan kreativitasnya, maka tak heran jika Hikmah masuk ke dalam daftar 50 pendidik terbaik di dunia dari Global Teacher Prize pada tahun 2018 silam.
+            </p>
           </div>
           <div class="col-md-5">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+            <div class="card" style="width: 25rem; margin-left: auto;">
+              <img src="https://image.akurat.co/images/uploads/images/akurat_20191125024130_9L5bA1.jpg" alt="">
+            </div>
           </div>
         </div>
         <hr>
         <div class="row featurette mt-5 mb-5">
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-            <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+            <h2 class="featurette-heading fw-normal lh-1">Ahmad Riza Wahono</h2>
+            <p class="lead" style="text-align: justify;">
+              Setelah lulus sebagai seorang doktor insinyur mekanik di Universitas Manchester, Ahmad Wahono bekerja di Indonesia Aerospace atau PT Dirgantara Indonesia. Beberapa tahun setelah menjabat, Ahmad tergerak untuk mengabdi menjadi seorang pendidik dengan mendirikan sekolah alternatif.
+              <br>
+              Pada tahun 2004, Ahmad mendirikan TechnoNatura. Dimulai hanya dengan 26 anak, Madrasah TechnoNatura mendidik siswa-siswi yang memiliki ketertarikan di berbagai bidang, mulai dari sains, teknik, seni, sosial, hingga berbagai proyek kewirausahaan. Bahkan, kurikulum multimedia yang berbentuk e-learning yang telah dikembangkannya sekarang telah digunakan di lebih dari 3.000 sekolah.
+              <br>
+              Kegigihannya untuk terus menggerakkan ilmu pengetahuan di Indonesia membawanya meraih penghargaan sebagai 50 guru terbaik di dunia dari Global Teacher Prize pada tahun 2018.
+            </p>
           </div>
           <div class="col-md-5 order-md-1">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+            <div class="card" style="width: 25rem; margin-right: auto;">
+             <img src="https://image.akurat.co/images/uploads/images/akurat_20191125024129_wrMy31.jpg" alt="">
+            </div>
           </div>
         </div>
-        <hr>
+        <hr class="line-limit">
     <!-- End content Teacher -->
 
     <!-- Content Pengumuman -->
-    <section class="program mb-5" id="scrollspyHeading1">
+    <section class="program mb-5" id="info">
       <div class="container mt-5 mb-3"><br>
-      <h2 class="title pu text-center"><b>ANNOUNCEMENT</b>
+      <h2 class="title pu text-center"><b>ANNOUNCEMENT<br>New Student Admission</b>
         <hr class="botm-linee text-center" style="margin-left: auto; margin-right: auto;">
       </h2>
         <div class="row mb-5" style="margin-left: auto; margin-right: auto;">
           <th>
             <div class="card ms-5 me-4 mb-3" style="width: 15rem;">
-              <img src="https://s1.best-wallpaper.net/wallpaper/m/1609/Audrey-Hepburn-01_m.jpg" class="card-img-top" alt="...">
+              <img src="https://st4.depositphotos.com/20524830/25778/i/450/depositphotos_257785638-stock-photo-little-girl-reading-library.jpg" class="card-img-top" alt="...">
               <div class="card-body">
                 <p class="card-text text-center">
-                  <b>Name Student</b><br>
-                  Asal Tk : .................<br>
+                  <b>Anastasia Harley</b><br>
+                  Gender : Feminine<br>
+                </p>
+              </div>
+            </div>
+          </th>
+
+          <th>
+            <div class="card ms-5 me-4 mb-3" style="width: 15rem;">
+              <img src="https://st4.depositphotos.com/3584053/40434/i/450/depositphotos_404343798-stock-photo-cute-pupil-with-funny-face.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-center">
+                  <b>Alston Aratohrn</b><br>
+                  Gender : Masculine<br>
+                </p>
+              </div>
+            </div>
+          </th>
+
+          <th>
+            <div class="card ms-5 me-4 mb-3" style="width: 15rem;">
+              <img src="https://st4.depositphotos.com/1594308/19941/i/450/depositphotos_199419528-stock-photo-happy-schoolboy-looking-camera-while.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-center">
+                  <b>Davine Aleavier</b><br>
+                  Gender : Masculine<br>
+                </p>
+              </div>
+            </div>
+          </th>
+
+          <th>
+            <div class="card ms-5 me-4 mb-3" style="width: 15rem;">
+              <img src="https://st3.depositphotos.com/1594308/18790/i/450/depositphotos_187903178-stock-photo-smiling-schoolgirl-crayon-looking-camera.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-center">
+                  <b>Alvina Audie</b><br>
+                  Gender : Feminine<br>
+                </p>
+              </div>
+            </div>
+          </th>
+
+          <th>
+            <div class="card ms-5 me-4 mb-3" style="width: 15rem;">
+              <img src="https://st.depositphotos.com/62628780/56772/i/450/depositphotos_567726200-stock-photo-happy-being-me-studio-shot.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-center">
+                  <b>Alma Aeslye</b><br>
+                  Gender : Feminine<br>
+                </p>
+
+              </div>
+            </div>
+          </th>
+
+          <th>
+            <div class="card ms-5 me-4 mb-3" style="width: 15rem;">
+              <img src="https://st3.depositphotos.com/1594308/18790/i/450/depositphotos_187903994-stock-photo-little-schoolgirl-wih-blue-highlighter.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-center">
+                  <b>Chelsea Clara</b><br>
+                  Gender : Feminine<br>
+                </p>
+
+              </div>
+            </div>
+          </th>
+
+          <th>
+            <div class="card ms-5 me-4 mb-3" style="width: 15rem;">
+              <img src="https://st3.depositphotos.com/1594308/18790/i/450/depositphotos_187903374-stock-photo-learner-elementary-school-sitting-desk.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-center">
+                  <b>Daisy Cornelia</b><br>
+                  Gender : Feminine<br>
+                </p>
+
+              </div>
+            </div>
+          </th>
+
+          <th>
+            <div class="card ms-5 me-4 mb-3" style="width: 15rem;">
+              <img src="https://st.depositphotos.com/62628780/60968/i/450/depositphotos_609687472-stock-photo-cool-confidence-portrait-happy-young.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-center">
+                  <b>Diana Dawn</b><br>
+                  Gender : Feminine<br>
                 </p>
 
               </div>
@@ -242,157 +442,164 @@
           </th>
 
         </div>
-        <hr>
+        <hr class="line-limit">
     </div>
   </section>
   <!-- End Pengumuman -->
 
    <!-- Content Pengumuman -->
-   <section class="program mb-5" id="scrollspyHeading1">
+   <section class="program mb-5" id="galery" >
     <div class="container mt-5 mb-3"><br>
     <h2 class="title pu text-center"><b>GALERY</b>
       <hr class="botm-linee text-center" style="margin-left: auto; margin-right: auto;">
     </h2>
       <div class="row mb-5" style="margin-left: auto; margin-right: auto;">
         <th>
-          <div class="card ms-5 me-4 mb-3" style="width: 15rem;">
-            <img src="https://s1.best-wallpaper.net/wallpaper/m/1609/Audrey-Hepburn-01_m.jpg" class="card-img-top" alt="...">
+          <div class="card shadow ms-4 me-5 mb-3" style="width: 22rem;">
+            <img src="https://st3.depositphotos.com/9880800/16362/i/450/depositphotos_163627924-stock-photo-tug-of-war.jpg" class="card-img-top" alt="...">
           </div>
         </th>
 
       <th>
-        <div class="card ms-5 me-4 mb-3" style="width: 15rem;">
-          <img src="https://s1.best-wallpaper.net/wallpaper/m/1609/Audrey-Hepburn-01_m.jpg" class="card-img-top" alt="...">
+        <div class="card shadow ms-4 me-5 mb-3" style="width: 22rem;">
+          <img src="https://st2.depositphotos.com/1518767/8442/i/450/depositphotos_84428190-stock-photo-smiling-school-kids-in-school.jpg" class="card-img-top" alt="...">
         </div>
       </th>
     
     <th>
-      <div class="card ms-5 me-4 mb-3" style="width: 15rem;">
-        <img src="https://s1.best-wallpaper.net/wallpaper/m/1609/Audrey-Hepburn-01_m.jpg" class="card-img-top" alt="...">
+      <div class="card shadow ms-4 me-5 mb-3" style="width: 22rem;">
+        <img src="https://st3.depositphotos.com/9880800/15002/i/450/depositphotos_150025344-stock-photo-cute-kids-drawing.jpg" class="card-img-top" alt="...">
+      </div>
+    </th>
+
+    <th>
+      <div class="card shadow ms-4 me-5 mb-3" style="width: 22rem;">
+        <img src="https://st3.depositphotos.com/9880800/16371/i/450/depositphotos_163710566-stock-photo-children-looking-at-book.jpg" class="card-img-top" alt="...">
+      </div>
+    </th>
+
+    <th>
+      <div class="card shadow ms-4 me-5 mb-3" style="width: 22rem;">
+        <img src="https://2.bp.blogspot.com/-KXm3QS8yyWc/WMvfnJjWuQI/AAAAAAAAC3U/S0IY7G5x3sM470hT84clTEWMDlMIcBrMwCPcBGAYYCw/s1600/000000000000000000000000000000000000000.jpg" class="card-img-top" alt="...">
+      </div>
+    </th>
+
+    <th>
+      <div class="card shadow ms-4 me-5 mb-3" style="width: 22rem;">
+        <img src="https://siedoo.com/wp-content/uploads/2019/12/karakter-1-1200x800.jpg" class="card-img-top" alt="...">
       </div>
     </th>
   
   </div>
-  <hr>
 
   </div>
 </section>
 <!-- End Pengumuman -->
-
-
-  <!--   Contact   -->
-    <section id="contact mb-5" class="section-padding">
-      <div class="container mb-5">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="ser-title"><b>CONTACT US</b></h2>
-            <hr class="botm-line">
-          </div>
-          <div class="col-md-4 col-sm-4" style="background-color: #0cb8b6;">
-            <h3 class="featurette-heading fw-normal lh-1 mt-3">Contact Info</h3>
-            <div class="space"></div>
-            <p class="text-muted"><i class="fa fa-map-marker  pull-left fa-2x"></i>Jln.Mp mangkunegara no 55<br> Palembang, , </p>
-            <div class="space"></div>
-            <p class="text-muted"><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>@gmail.com</p>
-            <div class="space"></div>
-            <p class="text-muted"><i class="fa fa-instagram fa-fw pull-left fa-2x"></i>Apotek_Pratama</p>
-            <div class="space"></div>
-            <p class="text-muted"><i class="fa fa-phone fa-fw pull-left fa-2x"></i>+62 895-6095-50990</p>
-          </div>
-          <div class="col-md-8 col-sm-8 marb20">
-            <div class="contact-info">
-              <h3 class="featurette-heading fw-normal lh-1">Any Question</h3>
-              <div class="space"></div>
-              <div class="text-muted" id="sendmessage">Your message has been sent. Thank you!</div>
-              <div id="errormessage"></div>
-              <form action="" method="post" role="form" class="contactForm">
-                <div class="form-group">
-                  <input type="text" name="name" class="form-control br-radius-zero" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validation"></div>
-                </div><br>
-                <div class="form-group">
-                  <input type="email" class="form-control br-radius-zero" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validation"></div>
-                </div><br>
-                <div class="form-group">
-                  <input type="text" class="form-control br-radius-zero" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                  <div class="validation"></div>
-                </div><br>
-                <div class="form-group">
-                  <textarea class="form-control br-radius-zero" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                  <div class="validation"></div>
-                </div><br>
-  
-                <div class="form-action">
-                  <button type="submit" class="btn btn-form">Send Message</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <hr>
-    <!--/ contact-->
       </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
+
+
     <!--footer-->
     <footer id="footer">
-      <div class="top-footer">
+      <div class="top-footer bg-light">
+        <br>
         <div class="container">
-          <div class="row">
-            <div class="col-md-4 col-sm-4 marb20">
-              <div class="ftr-tle">
-                <h4 class="white no-padding"><b>About Us</b></h4>
+            <!--   Contact   -->
+            <div class="row mb-5" style="margin-left: auto; margin-right:auto;">
+          <div class="col-md-12 ">
+            <h1 class="ser-title"><b>CONTACT US</b></h1>
+            <hr class="botm-line">
+          </div>
+          <div class="col-md-6 shadow" style="background-color: #0cb8b6;">
+            <h3 class="featurette-heading fw-normal lh-1 mt-3 text-white ms-5 me-5">Contact Info</h3>
+            <div class="row mt-5">
+              <div class="col-1 ms-5"><i class="fas fa-map-marker-alt fa-2x" style="color: white;"></i></div>
+              <div class="col">
+                <h4 class="featurette-heading fw-normal text-white">Jl. Harsono RM, Kelurahan Ragunan Kecamatan Pasar Minggu Kota Jakarta Selatan, Ragunan, Kec. Pasar Minggu, Kota Jakarta Selatan Prov. D.K.I. Jakarta</h4></div>
               </div>
-              <div class="info-sec">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, repellat ab nesciunt voluptates atque labore aliquam doloribus libero, fugit recusandae expedita perspiciatis voluptatibus officiis incidunt, ipsa laboriosam! Laboriosam, atque sequi?</p>
+              <div class="row mt-5">
+                <div class="col-1 ms-5"><i class=" 	fas fa-phone-volume fa-2x" style="color: white;"></i></div>
+                <div class="col">
+                  <h4 class="featurette-heading fw-normal text-white">(021) 78830426</h4></div>
+                </div>
+              </div>
+              <div class="col-md-6 marb20">
+                <div class="contact-info">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15862.883831191659!2d106.81146431914476!3d-6.300349662250676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69edff7ee7b2ff%3A0x76c620810ab68caa!2sSD%20Negeri%20Ragunan%208%20Pagi!5e0!3m2!1sid!2sid!4v1665328537584!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
             </div>
-            <div class="col-md-4 col-sm-4 marb20">
-              <div class="ftr-tle">
-                <h4 class="white no-padding">Quick Links</h4>
-              </div>
-              <div class="info-sec">
-                <ul class="quick-info">
-                  <li><a href="#"><i class="fa fa-circle"></i>Home</a></li>
-                  <li><a href="#"><i class="fa fa-circle"></i>Fasility</a></li>
-                  <li><a href="#"><i class="fa fa-circle"></i>Visi Misi</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-4 marb20">
-              <div class="ftr-tle">
-                <h4 class="white no-padding">Follow us On</h4>
-              </div>
-              <div class="info-sec">
-                <ul class="social-icon">
-                  <li class="bglight-blue"><i class="fa fa-facebook"></i></li>
-                  <li class="bgred"><i class="fa fa-google-plus"></i></li>
-                  <li class="bgdark-blue"><i class="fa fa-linkedin"></i></li>
-                  <li class="bglight-blue"><i class="fa fa-twitter"></i></li>
-                  <li class="bgred"><i class="fa fa-youtube"></i></li>
-                </ul>
+        
+    <!--/ contact-->
+        </div>
+      </div>
+            <div class="footer-line" style="background-color: #325C6A">
+            <div class="container">
+              <br>
+              <div class="row">
+                <div class="col-md-6 col-sm-4 marb20">
+                  <div class="ftr-tle">
+                    <h4 class="white no-padding"><b>About Us</b></h4>
+                  </div>
+                  <div class="info-sec" style="text-align: justify;">
+                    <p>
+                      SD Negeri 08 Ragunan adalah satu dari 4 sekolah net zero carbon yang baru saja diresmikan Gubernur DKI Jakarta. Sekolah di kawasan Jakarta Selatan ini menjadi salah satu sekolah ramah lingkungan pertama 
+                      di Indonesia, karena mengusung konsep Net Zero Healthy Greenship. Menurut Wakil Kepala Sekolah SDN Ragunan 08 Pagi M. Syaikhu Rohman, cara yang dilakukan sekolah itu untuk mempertahankan konsep ramah lingkungan (Net Zero Healthy Greenship)
+                      adalah dengan cara mengurangi kantong sampah di sekolahnya.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-3  ms-4 me-4 ">
+                  <div class="ftr-tle">
+                    <h4 class="white no-padding">Quick Links</h4>
+                  </div>
+                  <div class="info-sec">
+                    <ul class="quick-info">
+                      <div class="row text-white">
+                        <div class="col text-white">
+                          <li><a href="#profile">Home</a></li>
+                          <li><a href="#facility">Fasility</a></li>
+                          <li><a href="#profile">Visi Misi</a></li>
+                        </div> 
+                        <div class="col text-white"> 
+                          <li><a href="#galery">Galery</a></li>
+                          <li><a href="#teacher">Our Teacher</a></li>
+                          <li><a href="#info">Announcment</a></li>
+                        </div>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-2 ">
+                  <div class="ftr-tle">
+                    <h4 class="white no-padding">Follow us On</h4>
+                  </div>
+                  <div class="info-sec">
+                    <ul class="social-icon">
+                      <a class="social-media-icon" href="https://web.facebook.com"><span class="fab fa-facebook fa-2x"></span></a>
+                      <a class="social-media-icon" href="https://twitter.com"><span class="fab fa-twitter fa-2x"></span></a>
+                      <a class="social-media-icon" href="https://www.instagram.com"><span class="fab fa-instagram fa-2x"></span></a>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="footer-line">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              © Copyright DGScool. All Rights Reserved
-              <div class="credits">
-  
-                Designed by DGSchool
+          
+          <div class="footer-line" style="background-color: RGB(50, 85, 106)">
+            <div class="container "><br>
+              <div class="row">
+                <div class="col-md-12 text-center text-white">
+                  © Copyright DGSchool. All Rights Reserved
+                  <div class="credits">
+      
+                    Designed by DGSchool
+                  </div>
+                </div>
               </div>
-            </div>
+            </div><br>
           </div>
-        </div>
-      </div>
-    </footer>
-    <!--/ footer-->
+        </footer>
+        <!--/ footer-->
 </html>

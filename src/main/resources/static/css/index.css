@@ -1,0 +1,84 @@
+.featurette-divider {
+    margin: 10rem 0; 
+    /* Space out the Bootstrap <hr> more */
+  }
+  
+  /* Thin out the marketing headings */
+  /* rtl:begin:remove */
+  .featurette-heading {
+    letter-spacing: -.05rem;
+  }
+  .botm-line {
+    height: 6px;
+    width: 60px;
+    background: #ffb737;
+    position: relative;
+    border: 0;
+    margin: 20px 0 20px 0;
+  }
+  .botm-linee {
+    height: 6px;
+    width: 100px;
+    background: rgb(255, 99, 71);
+    position: relative;
+    border: 0;
+  }
+  .line-limit {
+    height: 5px;
+    width: auto;
+    background: black;
+    position: relative;
+    border: 0;
+    margin: 20px 0 20px 0;
+  }
+
+/*================ contact us ==================*/
+.space {
+    margin-top: 40px;
+}
+.btn-form, .btn-form:hover, .btn-form:focus {
+    background-color: #0cb8b6;
+    color: #fff;
+    border-radius: 0px;
+    padding: 10px 20px;
+}
+.br-radius-zero {
+    border-radius: 0px;
+}
+.form-control{
+	height: 40px;
+}
+
+.validation {
+    color: red;
+    display:none;
+    margin: 0 0 20px;
+    font-weight:400;
+    font-size:13px;
+}
+
+#sendmessage {
+    color: green;
+    border:1px solid green;
+    display:none;
+    text-align:center;
+    padding:15px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+#errormessage {
+    color: red;
+    display:none;
+    border:1px solid red;
+    text-align:center;
+    padding:15px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+#sendmessage.show, #errormessage.show, .show {
+	display:block;
+}
+
+  
