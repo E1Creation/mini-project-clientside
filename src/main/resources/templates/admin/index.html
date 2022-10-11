@@ -74,6 +74,7 @@
             href="siswa"
             aria-expanded="true"
             aria-controls="collapseTwo"
+            sec:authorize="hasAnyRole('GURU','ADMIN')"
           >
             <img src="image\student-icon.png" width="30" height="30" />
             <span>Daftar Siswa</span>
@@ -129,7 +130,6 @@
             <span>Rapot Nilai</span>
           </a>
         </li>
-
         <!-- Nav Item Mengelola User -->
         <li class="nav-item">
           <a
@@ -137,6 +137,7 @@
             href="/manageuser"
             aria-expanded="true"
             aria-controls="collapseUtilities"
+            sec:authorize="hasRole('ADMIN')"
           >
             <img src="image\role-icon.png" width="40" height="40" />
             <span>Mengelola User</span>
@@ -239,9 +240,10 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-                    >Douglas McGee</span
-                  >
+                  <span
+                    class="mr-2 d-none d-lg-inline text-gray-600 small"
+                    sec:authentication="name"
+                  ></span>
                   <img
                     class="img-profile rounded-circle"
                     src="image/undraw_profile.svg"

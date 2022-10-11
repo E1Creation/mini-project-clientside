@@ -62,10 +62,13 @@ $("#register-button").click((e) => {
         Swal.fire({
           position: "center",
           icon: "success",
-          title: "Region has been created",
+          title: "Account has been created",
           showConfirmButton: false,
-          timer: 2000,
+          timer: 1000,
         });
+        setTimeout(() => {
+          window.location.href = "/login";
+        }, 2000);
       },
     });
   }
