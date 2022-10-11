@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.AllArgsConstructor;
 import main.java.mii.miniproject.model.dto.request.LoginRequest;
+import main.java.mii.miniproject.model.dto.request.Register;
 import main.java.mii.miniproject.service.LoginService;
 
 @Controller
@@ -30,12 +31,17 @@ public class LoginController {
     }
 
     @GetMapping("/register")
-    public String register(LoginRequest loginRequest, Model model, Authentication authentication) {
-        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
-            return "auth/register";
-        }
-        return "redirect:/dashboard";
+    public String registerView(Register register, Model model, Authentication authentication) {
+
+        return "auth/register";
     }
+
+    // public String register(Register register) {
+    // if (!loginService.Register(register)) {
+    // return "auth/register";
+    // }
+    // return "redirect:/login";
+    // }
 
     @PostMapping("/login")
     public String login(LoginRequest loginRequest) {

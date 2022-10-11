@@ -17,7 +17,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import main.java.mii.miniproject.model.Entitas;
 import main.java.mii.miniproject.model.dto.request.LoginRequest;
+import main.java.mii.miniproject.model.dto.request.Register;
 import main.java.mii.miniproject.model.dto.response.LoginResponse;
 
 @Service
@@ -25,7 +27,7 @@ public class LoginService {
 
     private RestTemplate restTemplate;
 
-    @Value("${server.baseUrl}/login")
+    @Value("${server.baseUrl}")
     private String url;
 
     @Autowired
@@ -34,7 +36,8 @@ public class LoginService {
     }
 
     public boolean login(LoginRequest loginRequest) {
-        ResponseEntity<LoginResponse> respon = restTemplate.exchange(url, HttpMethod.POST, new HttpEntity(loginRequest),
+        ResponseEntity<LoginResponse> respon = restTemplate.exchange(url + "/login", HttpMethod.POST,
+                new HttpEntity(loginRequest),
                 new ParameterizedTypeReference<LoginResponse>() {
 
                 });
@@ -56,6 +59,17 @@ public class LoginService {
                 authorities);
 
         SecurityContextHolder.getContext().setAuthentication(authToken);
+    }
+
+    public boolean Register(Register register) {
+        ResponseEntity<Entitas> respon = restTemplate.exchange(url.concat("/entitas"), HttpMethod.POST,
+                new HttpEntity(register),
+                new ParameterizedTypeReference<Entitas>() {
+                });
+        if (respon.getStatusCode() == HttpStatus.CREATED) {
+            return true;
+        }
+        return false;
     }
 
 }

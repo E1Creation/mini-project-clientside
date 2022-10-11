@@ -14,48 +14,60 @@ import main.java.mii.miniproject.model.Entitas;
 
 @Service
 public class EntitasService {
-    private RestTemplate restTemplate;
+        private RestTemplate restTemplate;
 
-    @Value("${server.baseUrl}/entitas")
-    private String url;
+        @Value("${server.baseUrl}/entitas")
+        private String url;
 
-    @Autowired
-    public EntitasService(RestTemplate restTemplate){
-        this.restTemplate=restTemplate;
-    }
+        @Autowired
+        public EntitasService(RestTemplate restTemplate) {
+                this.restTemplate = restTemplate;
+        }
 
-    public List<Entitas> getAll() {
-        return restTemplate
-                .exchange(url, HttpMethod.GET, null,
-                        new ParameterizedTypeReference<List<Entitas>>() {
-                        }).getBody();
-    }
+        public List<Entitas> getAll() {
+                return restTemplate
+                                .exchange(url, HttpMethod.GET, null,
+                                                new ParameterizedTypeReference<List<Entitas>>() {
+                                                })
+                                .getBody();
+        }
 
-    public Entitas getById(Long id) {
-        return restTemplate
-                .exchange(url.concat("/" + id), HttpMethod.GET, null,
-                        new ParameterizedTypeReference<Entitas>() {
-                        }).getBody();
-    }
+        public Entitas getById(Long id) {
+                return restTemplate
+                                .exchange(url.concat("/" + id), HttpMethod.GET, null,
+                                                new ParameterizedTypeReference<Entitas>() {
+                                                })
+                                .getBody();
+        }
 
-    public Entitas create(Entitas entitas) {
-        return restTemplate
-                .exchange(url, HttpMethod.POST, new HttpEntity(entitas),
-                        new ParameterizedTypeReference<Entitas>() {
-                        }).getBody();
-    }
+        public Entitas getEntitasByRoleId(Long id) {
+                return restTemplate.exchange(url.concat("/role/" + id), HttpMethod.GET, null,
+                                new ParameterizedTypeReference<Entitas>() {
 
-    public Entitas update(Long id, Entitas entitas) {
-        return restTemplate
-                .exchange(url.concat("/" + id), HttpMethod.PUT, new HttpEntity(entitas),
-                        new ParameterizedTypeReference<Entitas>() {
-                        }).getBody();
-    }
+                                }).getBody();
+        }
 
-    public Entitas delete(Long id) {
-        return restTemplate
-                .exchange(url.concat("/" + id), HttpMethod.DELETE, null,
-                        new ParameterizedTypeReference<Entitas>() {
-                        }).getBody();
-    }    
+        public Entitas create(Entitas entitas) {
+                return restTemplate
+                                .exchange(url, HttpMethod.POST, new HttpEntity(entitas),
+                                                new ParameterizedTypeReference<Entitas>() {
+                                                })
+                                .getBody();
+        }
+
+        public Entitas update(Long id, Entitas entitas) {
+                return restTemplate
+                                .exchange(url.concat("/" + id), HttpMethod.PUT, new HttpEntity(entitas),
+                                                new ParameterizedTypeReference<Entitas>() {
+                                                })
+                                .getBody();
+        }
+
+        public Entitas delete(Long id) {
+                return restTemplate
+                                .exchange(url.concat("/" + id), HttpMethod.DELETE, null,
+                                                new ParameterizedTypeReference<Entitas>() {
+                                                })
+                                .getBody();
+        }
 }

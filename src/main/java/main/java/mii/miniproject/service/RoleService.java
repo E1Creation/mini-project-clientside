@@ -14,48 +14,53 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class RoleService {
-    private RestTemplate restTemplate;
+        private RestTemplate restTemplate;
 
         @Value("${server.baseUrl}/roles")
         private String url;
-    
+
         @Autowired
         public RoleService(RestTemplate restTemplate) {
-            this.restTemplate = restTemplate;
+                this.restTemplate = restTemplate;
         }
-    
+
         public List<Role> getAll() {
-            return restTemplate
-                    .exchange(url, HttpMethod.GET, null,
-                            new ParameterizedTypeReference<List<Role>>() {
-                            }).getBody();
+                return restTemplate
+                                .exchange(url, HttpMethod.GET, null,
+                                                new ParameterizedTypeReference<List<Role>>() {
+                                                })
+                                .getBody();
         }
-    
+
         public Role getById(Long id) {
-            return restTemplate
-                    .exchange(url.concat("/" + id), HttpMethod.GET, null,
-                            new ParameterizedTypeReference<Role>() {
-                            }).getBody();
+                return restTemplate
+                                .exchange(url.concat("/" + id), HttpMethod.GET, null,
+                                                new ParameterizedTypeReference<Role>() {
+                                                })
+                                .getBody();
         }
-    
+
         public Role create(Role role) {
-            return restTemplate
-                    .exchange(url, HttpMethod.POST, new HttpEntity(role),
-                            new ParameterizedTypeReference<Role>() {
-                            }).getBody();
+                return restTemplate
+                                .exchange(url, HttpMethod.POST, new HttpEntity(role),
+                                                new ParameterizedTypeReference<Role>() {
+                                                })
+                                .getBody();
         }
-    
+
         public Role update(Long id, Role role) {
-            return restTemplate
-                    .exchange(url.concat("/" + id), HttpMethod.PUT, new HttpEntity(role),
-                            new ParameterizedTypeReference<Role>() {
-                            }).getBody();
+                return restTemplate
+                                .exchange(url.concat("/" + id), HttpMethod.PUT, new HttpEntity(role),
+                                                new ParameterizedTypeReference<Role>() {
+                                                })
+                                .getBody();
         }
-    
+
         public Role delete(Long id) {
-            return restTemplate
-                    .exchange(url.concat("/" + id), HttpMethod.DELETE, null,
-                            new ParameterizedTypeReference<Role>() {
-                            }).getBody();
+                return restTemplate
+                                .exchange(url.concat("/" + id), HttpMethod.DELETE, null,
+                                                new ParameterizedTypeReference<Role>() {
+                                                })
+                                .getBody();
         }
 }

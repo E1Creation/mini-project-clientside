@@ -17,13 +17,14 @@ public class RequestInterceptor implements ClientHttpRequestInterceptor {
     @Override
     public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution)
             throws IOException {
-
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-        if (!request.getURI().getPath().equals("/login")) {
+        System.out.println(request.getURI().getPath());
+        System.out.println(request.getMethod());
+        if (!request.getURI().getPath().equals("/login") && !request.getURI().getPath().equals("/entitas")) {
             request.getHeaders().add("Authorization", "Basic " +
                     BasicHeader.createBasicToken(authentication.getPrincipal().toString(),
                             authentication.getCredentials().toString()));
+
         }
 
         ClientHttpResponse response = execution.execute(request, body);
