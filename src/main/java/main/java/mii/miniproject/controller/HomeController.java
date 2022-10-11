@@ -18,4 +18,5 @@ public class HomeController {
     public String dashboard() {
         return "admin/index";
     }
+
 }

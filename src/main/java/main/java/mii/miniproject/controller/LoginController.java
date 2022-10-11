@@ -18,19 +18,26 @@ import main.java.mii.miniproject.service.LoginService;
 
 @Controller
 @AllArgsConstructor
-@RequestMapping("/login")
 public class LoginController {
     private LoginService loginService;
 
-    @GetMapping
+    @GetMapping("/login")
     public String index(LoginRequest loginRequest, Model model, Authentication authentication) {
         if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
-            return "login";
+            return "auth/login";
         }
         return "redirect:/dashboard";
     }
 
-    @PostMapping
+    @GetMapping("/register")
+    public String register(LoginRequest loginRequest, Model model, Authentication authentication) {
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            return "auth/register";
+        }
+        return "redirect:/dashboard";
+    }
+
+    @PostMapping("/login")
     public String login(LoginRequest loginRequest) {
         if (!loginService.login(loginRequest)) {
             return "redirect:/login?error=true";
