@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Admin Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/admin.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center" href="admin-page.html">
+                <div class="image" >
+                    <img src="img\logo-white-removebg-preview.png" width="250" height="250">
+                </div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active" style="text-align: center ; color: white;">
+                    <span>Admin <br>Dashboard</span>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Menu
+            </div>
+
+            <!-- Nav Item Daftar Siswa -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#tabel-daftar-siswa" aria-expanded="true" aria-controls="collapseTwo">
+                    <img src="img\student-icon.png" width="30" height="30">
+                    <span>Daftar Siswa</span>
+                </a>
+            </li>
+
+            <!-- Nav Item Daftar Guru -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#tabel-daftar-guru" aria-expanded="true" aria-controls="collapseUtilities">
+                    <img src="img\teacher-icon.png" width="35" height="35">
+                    <span>Daftar Guru</span>
+                </a>
+            </li>
+
+            <!-- Nav Item Daftar Mata Pelajaran -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#tabel-daftar-matpel" aria-expanded="true" aria-controls="collapseUtilities">
+                    <img src="img\book-icon.png" width="30" height="30">
+                    <span>Daftar Mata Pelajaran</span>
+                </a>
+            </li>
+
+            <!-- Nav Item Daftar jadwal Mata Pelajaran -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#tabel-jadwal-matapelajaran" aria-expanded="true" aria-controls="collapseUtilities">
+                    <img src="img\timetable-icon.png" width="30" height="30">
+                    <span>Jadwal Mata Pelajaran</span>
+                </a>
+            </li>
+
+            <!-- Nav Item Mengelola User -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#mengelola-user" aria-expanded="true" aria-controls="collapseUtilities">
+                    <img src="img\role-icon.png" width="40" height="40">
+                    <span>Mengelola User</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search"
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for3" aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link" href="#" id="user" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="homepage.html" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Content Row -->
+                    <div class="row" style="display: flex; justify-content: center; align-items: center;">
+
+                        <!-- Jumlah Guru -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Jumlah Guru</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">30 Orang</div>
+                                        </div>
+                                        <div class="col-auto">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- g  -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Jumlah Siswa</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">300 Orang</div>
+                                        </div>
+                                        <div class="col-auto">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pending Requests Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Jumlah Mata Pelajaran</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">300 Orang</div>
+                                        </div>
+                                        <div class="col-auto">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Daftar Siswa -->
+
+                        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+                        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+                        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+                        <!------ Include the above in your HEAD tag ---------->
+                        
+                        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                        <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+                        
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 style="text-align:center"><b>Daftar Siswa</b></h3>
+                                <div class="table-responsive">
+                                      <table id="tabel-daftar-siswa" class="table table-primary table-striped " style="margin-top: 50; display: flex; justify-content: center; align-items: center;">
+                                           <thead>                
+                                            <th>Nama</th>
+                                             <th>NISN</th>
+                                             <th>Email</th>
+                                             <th>Kontak</th>
+                                              <th>Edit</th>
+                                           </thead>
+                            <tbody>
+                            <tr>
+                            <td>Mohsin</td>
+                            <td>1234</td>
+                            <td>mohsin@gmail.com</td>
+                            <td>086785747383</td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-s" data-title="EditGuru" data-toggle="modal" data-target="#editGuru" id="editGuru-list" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                            </tr>
+                            </tbody>
+                                
+                        </table>
+                        
+                        <!-- Start Modal Edit-->
+                        <div
+                        class="modal fade"
+                        id="editGuru-list"
+                        data-bs-backdrop="static"
+                        data-bs-keyboard="false"
+                        tabindex="-1"
+                        aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true"
+                        >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title fw-bold" id="staticBackdropLabel">
+                                Edit Profil Guru
+                              </h5>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <form>
+                              <div id="toast"></div>
+                              <div class="modal-body">
+                                <div class="mb-3">
+                                  <input
+                                    type="hidden"
+                                    class="form-control"
+                                    id="countryId-update"
+                                    required
+                                  />
+                                  <label for="nama-guru" class="form-label">Nama</label>
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="namaGuru-update"
+                                    
+                                  />
+                                  <label for="alamat-guru" class="form-label">Alamat</label>
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="alamatGuru-update"
+                                    required
+                                  />
+                        
+                                  <label for="email-guru" class="form-label">Email</label>
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="emailGuru-update"
+                                  />
+                        
+                                  <label for="kontak-guru" class="form-label">Kontak</label>
+                                  <select
+                                    class="form-select mt-2 text-black"
+                                    id="kontakGuru-update">
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" id="edit-guru">
+                                  Save
+                                </button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                        </div>
+                        <!-- End Modal Edit-->
+
+                        <!-- Divider -->
+                    <hr class="sidebar-divider d-none d-md-block" style="color: #121E91;">
+
+                    <!-- daftar guru -->
+                    <div class="col-md-12" >
+                        <h3 style="text-align:center"><b>Daftar Guru</b></h3>
+                    <div class="table-responsive">
+                        <table id="tabel-daftar-guru" class="table table-primary table-bordred table-striped " style="margin-top: 50; display: flex; justify-content: center; align-items: center;">
+                             
+                             <thead>                
+                              <th>Nama</th>
+                               <th>NIP</th>
+                               <th>Email</th>
+                               <th>Kontak</th>
+                                <th>Edit</th>
+                                </thead>
+                                <tbody>
+                                
+                                <tr>
+                                <td>Mohsin</td>
+                                <td>1234</td>
+                                <td>mohsin@gmail.com</td>
+                                <td>086785747383</td>
+                                <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-s" data-title="EditGuru" data-toggle="modal" data-target="#editGuru" id="editGuru-list" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                                </tr>
+                                </tbody>
+                            </table>
+          
+                            <!-- Start Modal Edit-->
+                            <div
+                            class="modal fade"
+                            id="#editGuru-list"
+                            data-bs-backdrop="static"
+                            data-bs-keyboard="false"
+                            tabindex="-1"
+                            aria-labelledby="staticBackdropLabel"
+                            aria-hidden="true"
+                            >
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title fw-bold" id="staticBackdropLabel">
+                                    Edit Profil Guru
+                                </h5>
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                ></button>
+                                </div>
+                                <form>
+                                <div id="toast"></div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                    <input
+                                        type="hidden"
+                                        class="form-control"
+                                        id="countryId-update"
+                                        required
+                                    />
+                                    <label for="nama-guru" class="form-label">Nama</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="namaGuru-update"
+                                        
+                                    />
+                                    <label for="alamat-guru" class="form-label">Alamat</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="alamatGuru-update"
+                                        required
+                                    />
+                        
+                                    <label for="email-guru" class="form-label">Email</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="emailGuru-update"
+                                    />
+                                    <label for="kontak-guru" class="form-label">Kontak</label>
+                                    <select
+                                    class="form-select mt-2 text-black"
+                                    id="kontakGuru-update">
+                                    </select>
+                                </div>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" id="edit-guru">
+                                    Save
+                                </button>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- End Modal Edit-->
+                          <!-- daftar guru -->
+                  </div>
+
+                        <!-- Divider -->
+                        <hr class="sidebar-divider d-none d-md-block">
+                </div>
+
+                <!-- Daftar Mata Pelajaran-->
+                        
+                    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+                    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+                    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+                    <!------ Include the above in your HEAD tag ---------->
+
+                    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 style="text-align:center"><b>Daftar Mata Pelajaran</b></h3>
+                        <div class="table-responsive">
+
+              <table id="daftar-matpel" class="table table-primary table-striped " style="margin-top: 50; display: flex; justify-content: center; align-items: center;">
+                   
+                   <thead > 
+                    <th>Kode Mata Pelajaran</th>               
+                    <th>Nama Mata Pelajaran</th>
+                     <th>Nama Guru</th>
+                     <th>Edit</th>
+                   </thead>
+                    <tbody>
+                    
+                    <tr>
+                    <td>1</td>
+                    <td>Mohsin</td>
+                    <td>mohsin@gmail.com</td>
+                    <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-s" data-title="EditMatpel" data-toggle="modal" data-target="#editGuru" id="editGuru-list" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                    </tr>
+                    </tbody>     
+                </table>
+
+                <!-- Start Modal Edit-->
+                <div
+                class="modal fade"
+                id="editGuru-list"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+                >
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="staticBackdropLabel">
+                        Edit Profil Guru
+                    </h5>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
+                    </div>
+                    <form>
+                    <div id="toast"></div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                        <input
+                            type="hidden"
+                            class="form-control"
+                            id="countryId-update"
+                            required
+                        />
+                        <label for="nama-guru" class="form-label">Nama</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="namaGuru-update"
+                            
+                        />
+                        <label for="alamat-guru" class="form-label">Alamat</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="alamatGuru-update"
+                            required
+                        />
+
+                        <label for="email-guru" class="form-label">Email</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="emailGuru-update"
+                        />
+
+                        <label for="kontak-guru" class="form-label">Kontak</label>
+                        <select
+                            class="form-select mt-2 text-black"
+                            id="kontakGuru-update">
+                        </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" id="edit-guru">
+                        Save
+                        </button>
+                    </div>
+                    </form>
+                </div>
+                </div>
+                </div>
+                <!-- End Modal Edit-->
+        
+        </div>
+      </div>
+        </div>
+  </div>
+
+                    <!-- Divider -->
+                    <hr class="sidebar-divider d-none d-md-block" style="color: #121E91;">
+
+                    <!-- Jadwal Pelajaran -->
+                    <div class="col-md-12">
+                        <h3 style="text-align:center"><b>Jadwal Pelajaran</b></h3>
+                    <div class="table-responsive">
+                        <table id="tabel-jadwal-pelajaran" class="table table-primary table-bordred table-striped " style="margin-top: 50; display: flex; justify-content: center; align-items: center;">
+                            
+                            <thead>                
+                            <th>Nama</th>
+                            <th>NIP</th>
+                            <th>Email</th>
+                            <th>Kontak</th>
+                                <th>Edit</th>
+                                </thead>
+                                <tbody>
+                                
+                                <tr>
+                                <td>Mohsin</td>
+                                <td>1234</td>
+                                <td>mohsin@gmail.com</td>
+                                <td>086785747383</td>
+                                <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-s" data-title="jadwal-pelajaran" data-toggle="modal" data-target="#editGuru" id="editGuru-list" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                                </tr>
+                                </tbody>
+                                    
+                            </table>
+
+                            <!-- Start Modal Edit-->
+                            <div
+                            class="modal fade"
+                            id="#editGuru-list"
+                            data-bs-backdrop="static"
+                            data-bs-keyboard="false"
+                            tabindex="-1"
+                            aria-labelledby="staticBackdropLabel"
+                            aria-hidden="true"
+                            >
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title fw-bold" id="staticBackdropLabel">
+                                    Edit Profil Guru
+                                </h5>
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                ></button>
+                                </div>
+                                <form>
+                                <div id="toast"></div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                    <input
+                                        type="hidden"
+                                        class="form-control"
+                                        id="countryId-update"
+                                        required
+                                    />
+                                    <label for="nama-guru" class="form-label">Nama</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="namaGuru-update"
+                                        
+                                    />
+                                    <label for="alamat-guru" class="form-label">Alamat</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="alamatGuru-update"
+                                        required
+                                    />
+                        
+                                    <label for="email-guru" class="form-label">Email</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="emailGuru-update"
+                                    />
+                                    <label for="kontak-guru" class="form-label">Kontak</label>
+                                    <select
+                                    class="form-select mt-2 text-black"
+                                    id="kontakGuru-update">
+                                    </select>
+                                </div>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" id="edit-jadwal=pelajran">
+                                    Save
+                                </button>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- End Modal Edit-->
+                        <!-- Jadwal Pelajaran -->
+                    </div>
+
+                        </div>
+
+                        <!-- Content Column -->
+                        <div class="col-lg-6 mb-4">
+            </div>
+            <!-- End of Main Content -->
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Logout?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="homepage.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>
