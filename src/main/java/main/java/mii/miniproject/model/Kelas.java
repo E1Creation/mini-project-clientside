@@ -1,5 +1,7 @@
 package main.java.mii.miniproject.model;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +11,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class Kelas {
-    private long id;
-    private String kode, tingkatan;
+    private Long id;
+
+    private String tingkatan;
+
+    private String kode;
+
+    private List<JadwalPelajaran> jadwalPelajarans;
 }

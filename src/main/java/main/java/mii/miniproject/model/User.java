@@ -1,5 +1,7 @@
 package main.java.mii.miniproject.model;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +11,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class User {
-    private long id;
-    private boolean is_account_locked, is_enabled;
-    private String username, password;
+    private Long id;
+    private String username;
+    private String password;
+    private Boolean isAccountLocked;
+    private Boolean isEnabled;
+    private Entitas entitas;
+    List<Role> roles;
 }

@@ -1,4 +1,4 @@
-package main.java.mii.miniproject.model;
+package main.java.mii.miniproject.model.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,14 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class JadwalPelajaran {
-    private Long id;
+public class AddKelasMatpelToJadwal {
     private String hari;
     private int jamMasuk;
     private int jamKeluar;
-
-    private MataPelajaran mataPelajarans;
-
-    private Kelas kelas;
+    private Long idMatpel;
+    private Long idKelas;
 }

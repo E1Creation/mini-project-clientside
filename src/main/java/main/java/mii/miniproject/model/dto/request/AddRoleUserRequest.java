@@ -1,4 +1,4 @@
-package main.java.mii.miniproject.model;
+package main.java.mii.miniproject.model.dto.request;
 
 import java.util.List;
 
@@ -9,11 +9,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+public class AddRoleUserRequest {
+    private Long userId;
+    private List<String> roles;
 
-public class Role {
-    private Long id;
-
-    private String name;
-
-    private List<User> users;
 }

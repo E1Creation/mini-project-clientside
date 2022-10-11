@@ -9,6 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class Rapot {
-    private long id, mata_pelajarans;
-    private int nilai, semester;
+    private Long id;
+    private int nilai;
+    private MataPelajaran mataPelajarans;
+    private Entitas entitas;
+    private int semester;
 }
