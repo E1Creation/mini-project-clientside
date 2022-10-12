@@ -40,7 +40,7 @@ public class EntitasService {
                                 .getBody();
         }
 
-        public List<Entitas> getEntitasByRoleId(Long id) {
+        public List<Entitas> getAllByRole(Long id) {
                 return restTemplate.exchange(url.concat("/role/" + id), HttpMethod.GET, null,
                                 new ParameterizedTypeReference<List<Entitas>>() {
 
