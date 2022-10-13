@@ -16,7 +16,7 @@ import main.java.mii.miniproject.model.MataPelajaran;
 public class MataPelajaranService {
     private RestTemplate restTemplate;
 
-        @Value("${server.baseUrl}/mata-pelajaran")
+        @Value("${server.baseUrl}/matapelajaran")
         private String url;
     
         @Autowired
@@ -58,4 +58,8 @@ public class MataPelajaranService {
                             new ParameterizedTypeReference<MataPelajaran>() {
                             }).getBody();
         }
+
+        // public MataPelajaran guruPengampu(){
+                
+        // }
 }

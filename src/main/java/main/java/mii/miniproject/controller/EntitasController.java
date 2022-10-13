@@ -30,10 +30,5 @@ public class EntitasController {
         model.addAttribute("siswa",entitasService.getAllByRole(1L));
         return "admin/daftar-siswa";
     }
-
-    @GetMapping("/manageuser")
-    public String manageUser() {
-        return "admin/mengelola-user";
-    }
 }
 
