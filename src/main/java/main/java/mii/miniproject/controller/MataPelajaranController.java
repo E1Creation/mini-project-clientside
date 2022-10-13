@@ -18,5 +18,4 @@ public class MataPelajaranController {
         model.addAttribute("matapelajaran", mataPelajaranService.getAll());
         return "admin/daftar-matpel";
     }
-
 }
