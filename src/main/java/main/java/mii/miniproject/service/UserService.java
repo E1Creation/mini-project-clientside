@@ -16,7 +16,7 @@ import main.java.mii.miniproject.model.User;
 public class UserService {
     private RestTemplate restTemplate;
 
-        @Value("${server.baseUrl}/country")
+        @Value("${server.baseUrl}/user")
         private String url;
     
         @Autowired

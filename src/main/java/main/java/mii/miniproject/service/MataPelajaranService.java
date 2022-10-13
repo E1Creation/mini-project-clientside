@@ -63,8 +63,4 @@ public class MataPelajaranService {
                                                 })
                                 .getBody();
         }
-
-        // public MataPelajaran guruPengampu(){
-                
-        // }
 }
