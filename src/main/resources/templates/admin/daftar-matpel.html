@@ -223,16 +223,20 @@
           <!-- Begin Page Content -->
           <div class="container-fluid">
             <!-- Content Row -->
-            <div class="container">
+            <div class="container-fluid">
               <div class="row">
                 <div class="col-md-12">
                   <h1 style="text-align: center; color: #1e2ebc">
                     <b>Daftar Mata Pelajaran</b>
                   </h1>
                   <br>
-                  <div class="d-flex justify-content-end">
-                    <button class="btn btn-success"
-                    sec:authorize="hasRole('ADMIN')">
+                  <div class="d-flex justify-content-end" sec:authorize="hasRole('ADMIN')">
+                    <button
+                      class="btn btn-success"
+                      data-bs-target="#create-modal"
+                      data-bs-toggle="modal"
+                      th:onclick="|showSelectInput()|"
+                    >
                       Create Mata Pelajaran
                     </button>
                   </div>
@@ -256,14 +260,13 @@
                           <td th:text="${daftarMatpel.entitas[0].nama}">
                             1234
                           </td>
-                          <td>
+                          <td sec:authorize="hasRole('ADMIN')">
                             <button
                               type="button"
                               class="btn btn-primary"
                               data-bs-toggle="modal"
                               data-bs-target="#detail-modal"
                               th:onclick="|showDetail('${daftarMatpel.id}')|"
-                              sec:authorize="hasRole('ADMIN')"
                             >
                               Detail
                             </button>
@@ -397,7 +400,58 @@
         </div>
       </div>
     </div>
+    <!-- create matpel modal -->
+    <div
+      class="modal fade"
+      id="create-modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Guru Pengampu</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3 mt-3">
+                <input type="hidden" id="id-employee" />
+                <label for="nomor induk" class="form-label"
+                  >Nama Pelajaran:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nama-pelajaran"
+                  placeholder="Masukkan Nama Pelajaran"
+                  name="nomor induk"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label">Guru :</label>
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  id="select-guru"
+                ></select>
+              </div>
 
+              <button type="submit" class="btn btn-primary" id="button-create">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end create modal -->
     <!-- Bootstrap core JavaScript-->
 
     <!-- Core plugin JavaScript-->

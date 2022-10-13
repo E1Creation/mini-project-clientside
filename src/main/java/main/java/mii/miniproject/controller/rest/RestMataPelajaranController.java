@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.AllArgsConstructor;
 import main.java.mii.miniproject.model.MataPelajaran;
+import main.java.mii.miniproject.model.dto.request.AddEntitasToMatpel;
 import main.java.mii.miniproject.service.MataPelajaranService;
 
 @RestController
@@ -34,6 +35,11 @@ public class RestMataPelajaranController {
     @PostMapping
     public MataPelajaran create(@RequestBody MataPelajaran mataPelajaran) {
         return mataPelajaranService.create(mataPelajaran);
+    }
+
+    @PostMapping("/entitas")
+    public MataPelajaran createEntitasToMatpel(@RequestBody AddEntitasToMatpel mataPelajaran) {
+        return mataPelajaranService.createEntitasToMatpel(mataPelajaran);
     }
 
     @PutMapping("/{id}")
