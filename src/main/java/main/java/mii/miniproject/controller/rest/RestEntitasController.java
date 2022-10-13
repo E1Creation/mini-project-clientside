@@ -26,6 +26,11 @@ public class RestEntitasController {
         return entitasService.getAll();
     }
 
+    @GetMapping("/role/{id}")
+    public List<Entitas> getEntitasByRoleId(@PathVariable Long id) {
+        return entitasService.getAllByRole(id);
+    }
+
     @GetMapping("/{id}")
     public Entitas getById(@PathVariable Long id) {
         return entitasService.getById(id);

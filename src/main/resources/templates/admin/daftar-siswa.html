@@ -240,7 +240,7 @@
                         <th>Email</th>
                         <th>Alamat</th>
                         <th>Kontak</th>
-                        <th>Edit</th>
+                        <th sec:authorize="hasRole('ADMIN')">Edit</th>
                       </thead>
                       <tbody th:each="daftarSiswa : ${siswa}">
                         <tr>
@@ -251,7 +251,7 @@
                           </td>
                           <td th:text="${daftarSiswa.alamat}">Jl Testing</td>
                           <td th:text="${daftarSiswa.noHp}">086785747383</td>
-                          <td>
+                          <td sec:authorize="hasRole('ADMIN')">
                             <p
                               data-placement="top"
                               data-toggle="tooltip"

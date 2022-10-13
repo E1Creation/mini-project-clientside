@@ -57,7 +57,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-          <a class="nav-link" href="/dashboard" style="justify-content:center;">
+          <a class="nav-link" href="/dashboard" style="justify-content: center">
             <span>Dashboard</span></a
           >
         </li>
@@ -169,11 +169,10 @@
               class="btn btn-link d-md-none rounded-circle mr-3"
             >
               <i class="fa fa-bars"></i>
-        </button>
+            </button>
 
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
-              
               <!-- Nav Item - User Information -->
               <li class="nav-item dropdown no-arrow">
                 <a
@@ -226,46 +225,47 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
-                  <h1 style="text-align: center; color: #1E2EBC;"><b>Daftar Guru</b></h1>
+                  <h1 style="text-align: center; color: #1e2ebc">
+                    <b>Daftar Guru</b>
+                  </h1>
                   <div class="table-responsive">
                     <table
                       id="mytable"
                       class="table table-bordred table-striped"
                       style="margin-top: 50"
                     >
-                      <thead style="color: #1E2EBC;">
+                      <thead style="color: #1e2ebc">
                         <th>Nama</th>
                         <th>NIP</th>
                         <th>Email</th>
                         <th>Alamat</th>
                         <th>Kontak</th>
-                        <th>Edit</th>
+                        <th sec:authorize="hasRole('ADMIN')">Edit</th>
                       </thead>
-                      <tbody th:each="daftarGuru : ${guru}">
-                        <tr>
+                      <tbody id="daftar-guru" th:each="daftarGuru : ${guru}">
+                        <!-- <tr>
                           <td th:text="${daftarGuru.nama}">Mohsin</td>
                           <td th:text="${daftarGuru.nomorInduk}">1234</td>
-                          <td th:text="${daftarGuru.email}">mohsin@gmail.com</td>
+                          <td th:text="${daftarGuru.email}">
+                            mohsin@gmail.com
+                          </td>
                           <td th:text="${daftarGuru.alamat}">Jl Testing</td>
                           <td th:text="${daftarGuru.noHp}">086785747383</td>
-                          <td>
-                            <p
-                              data-placement="top"
-                              data-toggle="tooltip"
-                              title="Edit"
+                          <td sec:authorize="hasRole('ADMIN')">
+                            <button
+                              class="btn btn-primary btn-s"
+                              data-title="EditGuru"
+                              data-bs-toggle="modal"
+                              data-bs-target="#edit-guru"
+                              id="editGuru-list"
                             >
-                              <button
-                                class="btn btn-primary btn-s"
-                                data-title="EditGuru"
-                                data-toggle="modal"
-                                data-target="#editGuru"
-                                id="editGuru-list"
-                              >
-                                <span class="glyphicon glyphicon-pencil"></span>
-                              </button>
-                            </p>
+                              Edit
+                            </button>
+                            <button class="btn btn-danger" id="delete-guru">
+                              Delete
+                            </button>
                           </td>
-                        </tr>
+                        </tr> -->
                       </tbody>
                     </table>
                   </div>
@@ -276,7 +276,42 @@
         </div>
 
         <!-- End of Main Content -->
-
+        <!-- modal edit start -->
+        <div
+          class="modal fade"
+          id="edit-guru"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Guru</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">...</div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal edit end -->
         <!-- Footer -->
         <footer class="sticky-footer bg-white">
           <div class="container w-100">
@@ -335,14 +370,12 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/admin-page.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -354,11 +387,9 @@
       integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
       crossorigin="anonymous"
     ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="/js/daftar-guru.js"></script>
+    <!-- Page level plugins -->
   </body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-  <
 </html>
