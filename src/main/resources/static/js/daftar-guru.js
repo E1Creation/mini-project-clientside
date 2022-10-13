@@ -5,16 +5,17 @@ $(document).ready(function () {
     contentType: "application/json",
     dataType: "json",
     success: (result) => {
-      console.log(result);
+      // console.log(result);
       let data = ``;
       $.each(result, function (i, val) {
+        console.log(val);
         data += `
         <tr>
-        <td th:text="${val.nama}">Mohsin</td>
-        <td th:text="${val.nomorInduk}">1234</td>
-        <td th:text="${val.email}">mohsin@gmail.com</td>
-        <td th:text="${val.alamat}">Jl Testing</td>
-        <td th:text="${val.noHp}">086785747383</td>
+        <td >${val.nama}</td>
+        <td >${val.nomorInduk}</td>
+        <td>${val.email}</td>
+        <td>${val.alamat}</td>
+        <td>${val.noHp}</td>
         <td sec:authorize="hasRole('ADMIN')">
           <button
             class="btn btn-primary btn-s"
@@ -25,7 +26,7 @@ $(document).ready(function () {
           >
             Edit
           </button>
-          <button class="btn btn-danger" id="delete-guru">
+          <button class="btn btn-danger" id="delete-guru" onclick="deleteById(${val.user.id})">
             Delete
           </button>
         </td>
@@ -36,13 +37,8 @@ $(document).ready(function () {
   });
 });
 
-$("#delete-guru").click((e) => {
-  console.log("[[${daftarGuru.id}]]");
-});
-
 function deleteById(id) {
-  e.preventDefault();
-
+  console.log(id);
   Swal.fire({
     title: "Are you sure?",
     text: "You won't be able to revert this!",
@@ -63,6 +59,7 @@ function deleteById(id) {
           console.log(result);
         },
       });
+      location.reload();
     }
   });
 }
