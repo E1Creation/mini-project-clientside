@@ -35,16 +35,12 @@ $(document).ready(function () {
       {
         data: null,
         render: (data, type, row, meta) => {
-          return `
-                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailRegion" onclick="findById(${data.id})">
-                          Detail
-                          </button>
-  
-                          <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateRegion" onclick="beforeUpdate(${data.id})">
+          return ` 
+                          <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateRapot" onclick="beforeUpdate(${data.id})">
                           Update
                           </button>
   
-                           <button type="button" class="btn btn-danger" onclick="deleteRegion(${data.id})">
+                           <button type="button" class="btn btn-danger" onclick="deleteRapot(${data.id})">
                           Delete
                           </button>
                       `;
@@ -53,3 +49,5 @@ $(document).ready(function () {
     ],
   });
 });
+
+
