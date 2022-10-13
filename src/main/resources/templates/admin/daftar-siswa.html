@@ -41,13 +41,13 @@
         class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
         id="accordionSidebar"
       >
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center" href="/dashboard">
+         <!-- Sidebar - Brand -->
+         <a class="sidebar-brand d-flex align-items-center" href="/dashboard">
           <div class="image">
             <img
               src="image\logo-white-removebg-preview.png"
-              width="250"
-              height="250"
+              width="150"
+              height="150"
             />
           </div>
         </a>
@@ -147,11 +147,6 @@
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block" />
-
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-          <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
       </ul>
       <!-- End of Sidebar -->
 
@@ -228,13 +223,14 @@
                   <h1 style="text-align: center; color: #1e2ebc">
                     <b>Daftar Siswa</b>
                   </h1>
+                  <br>
                   <div class="table-responsive">
                     <table
-                      id="mytable"
-                      class="table table-bordred table-striped"
+                      id="table-siswa"
+                      class="table"
                       style="margin-top: 50"
                     >
-                      <thead style="color: #1e2ebc">
+                      <thead style="color: #1e2ebc" class="table-primary">
                         <th>Nama</th>
                         <th>NISN</th>
                         <th>Email</th>
@@ -242,6 +238,8 @@
                         <th>Kontak</th>
                         <th sec:authorize="hasRole('ADMIN')">Action</th>
                       </thead>
+                      <tbody th:each=" daftarSiswa : ${siswa}" style="color: black;">
+                      <tbody th:each=" daftarSiswa : ${siswa}">
                       <tbody th:each=" daftarSiswa : ${siswa}">
                         <tr>
                           <td th:text="${daftarSiswa.nama}">Mohsin</td>
@@ -295,7 +293,7 @@
     </div>
     <!-- End of Page Wrapper -->
 
-    <!-- Scroll to Top Button-->
+    <!-- Modal Edit Siswa-->
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fas fa-angle-up"></i>
     </a>
@@ -378,6 +376,7 @@
         </div>
       </div>
     </div>
+
     <!-- Logout Modal-->
     <div
       class="modal fade"
@@ -392,25 +391,16 @@
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
             <button
-              class="close"
               type="button"
-              data-dismiss="modal"
+              class="btn-close"
+              data-bs-dismiss="modal"
               aria-label="Close"
-            >
-              <span aria-hidden="true">×</span>
-            </button>
+            ></button>
           </div>
           <div class="modal-body">
             Select "Logout" below if you are ready to end your current session.
           </div>
           <div class="modal-footer">
-            <button
-              class="btn btn-secondary"
-              type="button"
-              data-dismiss="modal"
-            >
-              Cancel
-            </button>
             <a class="btn btn-primary" href="/logout">Logout</a>
           </div>
         </div>
