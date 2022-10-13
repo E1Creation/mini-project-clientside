@@ -17,18 +17,18 @@ $(document).ready(function () {
       {
         data: "nilai",
       },
-      //   {
-      //     data: "mataPelajarans.entitas[0].nama",
-      //   },
       {
-        data: null,
-        render: (data, type, row, meta) => {
-          return `
-            <tr th:each = "entitas : ${enti}">
-            </tr>
-            `;
-        },
+        data: "mataPelajarans.entitas[0].nama",
       },
+      // {
+      //   data: null,
+      //   render: (data, type, row, meta) => {
+      //     return `
+      //       <tr th:each = "entitas : ${enti}">
+      //       </tr>
+      //       `;
+      //   },
+      // },
       {
         data: null,
         render: (data, type, row, meta) => {
