@@ -41,13 +41,13 @@
         class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
         id="accordionSidebar"
       >
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center" href="/dashboard">
+         <!-- Sidebar - Brand -->
+         <a class="sidebar-brand d-flex align-items-center" href="/dashboard">
           <div class="image">
             <img
               src="image\logo-white-removebg-preview.png"
-              width="250"
-              height="250"
+              width="150"
+              height="150"
             />
           </div>
         </a>
@@ -147,11 +147,6 @@
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block" />
-
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-          <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
       </ul>
       <!-- End of Sidebar -->
 
@@ -228,13 +223,14 @@
                   <h1 style="text-align: center; color: #1e2ebc">
                     <b>Daftar Siswa</b>
                   </h1>
+                  <br>
                   <div class="table-responsive">
                     <table
-                      id="mytable"
-                      class="table table-bordred table-striped"
+                      id="table-siswa"
+                      class="table"
                       style="margin-top: 50"
                     >
-                      <thead style="color: #1e2ebc">
+                      <thead style="color: #1e2ebc" class="table-primary">
                         <th>Nama</th>
                         <th>NISN</th>
                         <th>Email</th>
@@ -242,8 +238,8 @@
                         <th>Kontak</th>
                         <th sec:authorize="hasRole('ADMIN')">Action</th>
                       </thead>
-                      <tbody id="daftar-siswa">
-                        <!-- <tr>
+                      <tbody th:each=" daftarSiswa : ${siswa}" style="color: black;">
+                        <tr>
                           <td th:text="${daftarSiswa.nama}">Mohsin</td>
                           <td th:text="${daftarSiswa.nomorInduk}">1234</td>
                           <td th:text="${daftarSiswa.email}">
@@ -252,23 +248,25 @@
                           <td th:text="${daftarSiswa.alamat}">Jl Testing</td>
                           <td th:text="${daftarSiswa.noHp}">086785747383</td>
                           <td sec:authorize="hasRole('ADMIN')">
-                            <p
-                              data-placement="top"
-                              data-toggle="tooltip"
-                              title="Edit"
+                            <button
+                              class="btn btn-primary btn-s"
+                              data-title="editsiswa"
+                              data-bs-toggle="modal"
+                              data-bs-target="#edit-siswa"
+                              id="siswa-button"
+                              th:onclick="|showInputData('${daftarSiswa.user.id}')|"
                             >
-                              <button
-                                class="btn btn-primary btn-s"
-                                data-title="EditGuru"
-                                data-toggle="modal"
-                                data-target="#editGuru"
-                                id="editGuru-list"
-                              >
-                                <span class="glyphicon glyphicon-pencil"></span>
-                              </button>
-                            </p>
+                              Edit
+                            </button>
+                            <button
+                              class="btn btn-danger"
+                              id="delete-siswa"
+                              th:onclick="|deleteById('${daftarSiswa.user.id}')|"
+                            >
+                              Delete
+                            </button>
                           </td>
-                        </tr> -->
+                        </tr>
                       </tbody>
                     </table>
                   </div>
@@ -293,10 +291,89 @@
     </div>
     <!-- End of Page Wrapper -->
 
-    <!-- Scroll to Top Button-->
+    <!-- Modal Edit Siswa-->
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fas fa-angle-up"></i>
     </a>
+    <div
+      class="modal fade"
+      id="edit-siswa"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Guru</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3 mt-3">
+                <input type="hidden" id="id-employee" />
+                <label for="nomor induk" class="form-label">NISN:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nisn"
+                  placeholder="Masukkan nomor induk"
+                  name="nomor induk"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label">Nama :</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nama"
+                  placeholder="Masukkan nama`"
+                  name="nama"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label">Email :</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Masukkan email`"
+                  name="email"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label">Alamat :</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="alamat"
+                  placeholder="Masukkan alamat"
+                  name="nama"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label">Kontak :</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="kontak"
+                  placeholder="Masukkan Kontak`"
+                  name="kontak"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary" id="button-edit">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Logout Modal-->
     <div

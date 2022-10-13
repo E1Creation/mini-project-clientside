@@ -46,8 +46,8 @@
           <div class="image">
             <img
               src="image\logo-white-removebg-preview.png"
-              width="250"
-              height="250"
+              width="150"
+              height="150"
             />
           </div>
         </a>
@@ -147,11 +147,6 @@
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block" />
-
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-          <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
       </ul>
       <!-- End of Sidebar -->
 
@@ -222,19 +217,20 @@
             <!-- Content Row -->
 
             <!-- Content Row -->
-            <div class="container">
+            <div class="container-fluid">
               <div class="row">
                 <div class="col-md-12">
                   <h1 style="text-align: center; color: #1e2ebc">
                     <b>Daftar Guru</b>
                   </h1>
+                  <br>
                   <div class="table-responsive">
                     <table
-                      id="mytable"
-                      class="table table-bordred table-striped"
+                      id="table-guru"
+                      class="table"
                       style="margin-top: 50"
                     >
-                      <thead style="color: #1e2ebc">
+                      <thead style="color: #1e2ebc" class="table-primary">
                         <th>Nama</th>
                         <th>NIP</th>
                         <th>Email</th>
@@ -242,8 +238,8 @@
                         <th>Kontak</th>
                         <th sec:authorize="hasRole('ADMIN')">Edit</th>
                       </thead>
-                      <tbody id="daftar-guru" th:each="daftarGuru : ${guru}">
-                        <!-- <tr>
+                      <tbody th:each="daftarGuru : ${guru}" style="color:black ;">
+                        <tr>
                           <td th:text="${daftarGuru.nama}">Mohsin</td>
                           <td th:text="${daftarGuru.nomorInduk}">1234</td>
                           <td th:text="${daftarGuru.email}">
@@ -257,15 +253,19 @@
                               data-title="EditGuru"
                               data-bs-toggle="modal"
                               data-bs-target="#edit-guru"
-                              id="editGuru-list"
+                              th:onclick="|showInputData('${daftarGuru.user.id}')|"
                             >
                               Edit
                             </button>
-                            <button class="btn btn-danger" id="delete-guru">
+                            <button
+                              th:onclick="|deleteById('${daftarGuru.user.id}')|"
+                              class="btn btn-danger"
+                              id="delete-guru"
+                            >
                               Delete
                             </button>
                           </td>
-                        </tr> -->
+                        </tr>
                       </tbody>
                     </table>
                   </div>
@@ -295,18 +295,67 @@
                   aria-label="Close"
                 ></button>
               </div>
-              <div class="modal-body">...</div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button type="button" class="btn btn-primary">
-                  Save changes
-                </button>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3 mt-3">
+                    <input type="hidden" id="id-employee" />
+                    <label for="nomor induk" class="form-label">NIP:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nip"
+                      placeholder="Masukkan nomor induk"
+                      name="nomor induk"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Nama :</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nama"
+                      placeholder="Masukkan nama`"
+                      name="nama"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Email :</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="Masukkan email`"
+                      name="email"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Alamat :</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="alamat"
+                      placeholder="Masukkan alamat"
+                      name="nama"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Kontak :</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="kontak"
+                      placeholder="Masukkan Kontak`"
+                      name="kontak"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="button-edit"
+                  >
+                    Submit
+                  </button>
+                </form>
               </div>
             </div>
           </div>

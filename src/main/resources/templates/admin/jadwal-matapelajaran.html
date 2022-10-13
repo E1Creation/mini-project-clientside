@@ -10,7 +10,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Admin - Dashboard</title>
+    <title>Jadwal Kelas Dashboard</title>
 
     <!-- Custom fonts for this template-->
 
@@ -46,8 +46,8 @@
           <div class="image">
             <img
               src="image\logo-white-removebg-preview.png"
-              width="250"
-              height="250"
+              width="150"
+              height="150"
             />
           </div>
         </a>
@@ -58,7 +58,7 @@
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
           <a class="nav-link" href="/dashboard">
-            <span>Admin <br />Dashboard</span></a
+            <span>Dashboard</span></a
           >
         </li>
 
@@ -78,7 +78,7 @@
             sec:authorize="hasAnyRole('GURU','ADMIN')"
           >
             <img src="image\student-icon.png" width="30" height="30" />
-            <span>Daftar Siswa</span>
+            <span>Jadwal Kelas</span>
           </a>
         </li>
 
@@ -149,9 +149,6 @@
         <hr class="sidebar-divider d-none d-md-block" />
 
         <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-          <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
       </ul>
       <!-- End of Sidebar -->
 
@@ -164,72 +161,9 @@
             class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
           >
             <!-- Sidebar Toggle (Topbar) -->
-            <button
-              id="sidebarToggleTop"
-              class="btn btn-link d-md-none rounded-circle mr-3"
-            >
-              <i class="fa fa-bars"></i>
-            </button>
-
-            <!-- Topbar Search -->
-            <form
-              class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
-            >
-              <div class="input-group">
-                <input
-                  type="text"
-                  class="form-control bg-light border-0 small"
-                  placeholder="Search for..."
-                  aria-label="Search"
-                  aria-describedby="basic-addon2"
-                />
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="button">
-                    <i class="fas fa-search fa-sm"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
 
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
-              <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-              <li class="nav-item dropdown no-arrow d-sm-none">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="searchDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <i class="fas fa-search fa-fw"></i>
-                </a>
-                <!-- Dropdown - Messages -->
-                <div
-                  class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                  aria-labelledby="searchDropdown"
-                >
-                  <form class="form-inline mr-auto w-100 navbar-search">
-                    <div class="input-group">
-                      <input
-                        type="text"
-                        class="form-control bg-light border-0 small"
-                        placeholder="Search for..."
-                        aria-label="Search"
-                        aria-describedby="basic-addon2"
-                      />
-                      <div class="input-group-append">
-                        <button class="btn btn-primary" type="button">
-                          <i class="fas fa-search fa-sm"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </li>
-
               <!-- Nav Item - User Information -->
               <li class="nav-item dropdown no-arrow">
                 <a
@@ -281,7 +215,8 @@
             <div class="container">
               <div class="col-md-12">
                 <div class="row">
-                  <h1 style="text-align: center"><b>Daftar Jadwal Kelas</b></h1>
+                  <h1 style="text-align: center; text-align: center; color: #1e2ebc"><b>Daftar Jadwal Kelas</b></h1>
+                  <br>
                   <div class="col col-6" id="biokelas">test</div>
                   <div class="d-flex flex-column">
                     <p>Pilih Kelas :</p>
@@ -290,19 +225,19 @@
                     aria-label="Default select example"
                     id="select-kelas"
                   >
-                  </div>
-                 
+                  </div>                
                     <!-- <option selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option> -->
                   </select>
+                  <br>
                   <div class="table-responsive">
                     <table
-                      class="table table-primary table-striped"
+                      class="table"
                       style="margin-top: 50"
                     >
-                      <thead>
+                      <thead style="color: #1e2ebc" class="table-primary">
                         <th>No</th>
                         <th>Mata Pelajaran</th>
                         <th>Hari</th>

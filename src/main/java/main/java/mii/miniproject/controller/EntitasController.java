@@ -22,6 +22,7 @@ public class EntitasController {
 
     @GetMapping("/guru")
     public String guru(Model model, Long id) {
+        SecurityContextHolder.getContext().getAuthentication().getName();
         model.addAttribute("guru", entitasService.getAllByRole(2L));
         return "admin/daftar-guru";
     }
