@@ -23,6 +23,9 @@ $(document).ready(function () {
       {
         data: "mataPelajarans.entitas[0].nama",
       },
+      {
+        data: "semester",
+      },
       // {
       //   data: null,
       //   render: (data, type, row, meta) => {
@@ -36,10 +39,6 @@ $(document).ready(function () {
         data: null,
         render: (data, type, row, meta) => {
           return `
-                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailRegion" onclick="findById(${data.id})">
-                          Detail
-                          </button>
-  
                           <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateRegion" onclick="beforeUpdate(${data.id})">
                           Update
                           </button>

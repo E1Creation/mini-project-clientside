@@ -1,38 +1,91 @@
-$(document).ready(function () {
+// $(document).ready(function () {
+//   $.ajax({
+//     url: "/api/entitas/role/1",
+//     method: "GET",
+//     contentType: "application/json",
+//     dataType: "json",
+//     success: (result) => {
+//       // console.log(result);
+//       let data = ``;
+//       $.each(result, function (i, val) {
+//         console.log(val);
+//         data += `
+//           <tr>
+//           <td >${val.nama}</td>
+//           <td >${val.nomorInduk}</td>
+//           <td>${val.email}</td>
+//           <td>${val.alamat}</td>
+//           <td>${val.noHp}</td>
+//           <td sec:authorize="hasRole('ADMIN')">
+//             <button
+//               class="btn btn-primary btn-s"
+//               data-title="EditGuru"
+//               data-bs-toggle="modal"
+//               data-bs-target="#edit-guru"
+//               id="editGuru-list"
+//             >
+//               Edit
+//             </button>
+//             <button class="btn btn-danger" id="delete-guru" onclick="deleteById(${val.user.id})">
+//               Delete
+//             </button>
+//           </td>
+//         </tr>;`;
+//       });
+//       $("#daftar-siswa").html(data);
+//     },
+//   });
+// });
+
+function showInputData(id) {
   $.ajax({
-    url: "/api/entitas/role/1",
+    url: "/api/entitas/" + id,
     method: "GET",
     contentType: "application/json",
     dataType: "json",
     success: (result) => {
-      // console.log(result);
-      let data = ``;
-      $.each(result, function (i, val) {
-        console.log(val);
-        data += `
-          <tr>
-          <td >${val.nama}</td>
-          <td >${val.nomorInduk}</td>
-          <td>${val.email}</td>
-          <td>${val.alamat}</td>
-          <td>${val.noHp}</td>
-          <td sec:authorize="hasRole('ADMIN')">
-            <button
-              class="btn btn-primary btn-s"
-              data-title="EditGuru"
-              data-bs-toggle="modal"
-              data-bs-target="#edit-guru"
-              id="editGuru-list"
-            >
-              Edit
-            </button>
-            <button class="btn btn-danger" id="delete-guru" onclick="deleteById(${val.user.id})">
-              Delete
-            </button>
-          </td>
-        </tr>;`;
+      console.log(result);
+      $("#nisn").val(result.nomorInduk);
+      $("#nama").val(result.nama);
+      $("#email").val(result.email);
+      $("#alamat").val(result.alamat);
+      $("#kontak").val(result.noHp);
+      $("#id-employee").val(result.user.id);
+    },
+  });
+}
+
+$("#button-edit").click((e) => {
+  e.preventDefault();
+  let nama = $("#nama").val();
+  let nisn = $("#nisn").val();
+  let email = $("#email").val();
+  let alamat = $("#alamat").val();
+  let kontak = $("#kontak").val();
+  $.ajax({
+    url: "/api/entitas/" + $("#id-employee").val(),
+    method: "PUT",
+    contentType: "application/json",
+    dataType: "json",
+    data: JSON.stringify({
+      nama: nama,
+      nomorInduk: nisn,
+      alamat: alamat,
+      email: email,
+      noHp: kontak,
+    }),
+    success: (result) => {
+      console.log(result);
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Guru has been updated",
+        showConfirmButton: false,
+        timer: 1000,
       });
-      $("#daftar-siswa").html(data);
+      setTimeout(() => {
+        location.reload();
+      }, 1000);
     },
   });
 });
@@ -57,9 +110,11 @@ function deleteById(id) {
         dataType: "json",
         success: (result) => {
           console.log(result);
+          setTimeout(() => {
+            location.reload();
+          }, 1000);
         },
       });
-      location.reload();
     }
   });
 }

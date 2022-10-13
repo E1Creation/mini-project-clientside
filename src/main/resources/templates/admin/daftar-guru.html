@@ -242,8 +242,8 @@
                         <th>Kontak</th>
                         <th sec:authorize="hasRole('ADMIN')">Edit</th>
                       </thead>
-                      <tbody id="daftar-guru" th:each="daftarGuru : ${guru}">
-                        <!-- <tr>
+                      <tbody th:each="daftarGuru : ${guru}">
+                        <tr>
                           <td th:text="${daftarGuru.nama}">Mohsin</td>
                           <td th:text="${daftarGuru.nomorInduk}">1234</td>
                           <td th:text="${daftarGuru.email}">
@@ -257,15 +257,19 @@
                               data-title="EditGuru"
                               data-bs-toggle="modal"
                               data-bs-target="#edit-guru"
-                              id="editGuru-list"
+                              th:onclick="|showInputData('${daftarGuru.user.id}')|"
                             >
                               Edit
                             </button>
-                            <button class="btn btn-danger" id="delete-guru">
+                            <button
+                              th:onclick="|deleteById('${daftarGuru.user.id}')|"
+                              class="btn btn-danger"
+                              id="delete-guru"
+                            >
                               Delete
                             </button>
                           </td>
-                        </tr> -->
+                        </tr>
                       </tbody>
                     </table>
                   </div>
@@ -295,18 +299,67 @@
                   aria-label="Close"
                 ></button>
               </div>
-              <div class="modal-body">...</div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button type="button" class="btn btn-primary">
-                  Save changes
-                </button>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3 mt-3">
+                    <input type="hidden" id="id-employee" />
+                    <label for="nomor induk" class="form-label">NIP:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nip"
+                      placeholder="Masukkan nomor induk"
+                      name="nomor induk"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Nama :</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nama"
+                      placeholder="Masukkan nama`"
+                      name="nama"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Email :</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="Masukkan email`"
+                      name="email"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Alamat :</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="alamat"
+                      placeholder="Masukkan alamat"
+                      name="nama"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Kontak :</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="kontak"
+                      placeholder="Masukkan Kontak`"
+                      name="kontak"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="button-edit"
+                  >
+                    Submit
+                  </button>
+                </form>
               </div>
             </div>
           </div>
