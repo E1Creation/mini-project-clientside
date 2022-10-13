@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Entitas {
+    private Long id;
     private Long nomorInduk;
     private String nama;
     private String alamat;

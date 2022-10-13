@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import main.java.mii.miniproject.model.MataPelajaran;
+import main.java.mii.miniproject.model.dto.request.AddEntitasToMatpel;
 
 @Service
 public class MataPelajaranService {
@@ -46,6 +47,13 @@ public class MataPelajaranService {
                                                 new ParameterizedTypeReference<MataPelajaran>() {
                                                 })
                                 .getBody();
+        }
+
+        public MataPelajaran createEntitasToMatpel(AddEntitasToMatpel addEntitasToMatpel) {
+                return restTemplate.exchange(url + "/entitas", HttpMethod.POST, new HttpEntity(addEntitasToMatpel),
+                                new ParameterizedTypeReference<MataPelajaran>() {
+
+                                }).getBody();
         }
 
         public MataPelajaran update(Long id, MataPelajaran mataPelajaran) {
