@@ -231,7 +231,8 @@
                   </h1>
                   <br>
                   <div class="d-flex justify-content-end">
-                    <button class="btn btn-success">
+                    <button class="btn btn-success"
+                    sec:authorize="hasRole('ADMIN')">
                       Create Mata Pelajaran
                     </button>
                   </div>
@@ -246,11 +247,11 @@
                         <th>Kode Mata Pelajaran</th>
                         <th>Nama Mata Pelajaran</th>
                         <th>Guru Pengampu</th>
-                        <th>Action</th>
+                        <th sec:authorize="hasRole('ADMIN')">Action</th>
                       </thead>
                       <tbody th:each="daftarMatpel : ${matapelajaran}">
                         <tr>
-                          <td th:text="${daftarMatpel.id}">Mohsin</td>
+                          <td  th:text="${daftarMatpel.id}">Mohsin</td>
                           <td th:text="${daftarMatpel.nama}">1234</td>
                           <td th:text="${daftarMatpel.entitas[0].nama}">
                             1234
@@ -262,6 +263,7 @@
                               data-bs-toggle="modal"
                               data-bs-target="#detail-modal"
                               th:onclick="|showDetail('${daftarMatpel.id}')|"
+                              sec:authorize="hasRole('ADMIN')"
                             >
                               Detail
                             </button>
@@ -271,6 +273,7 @@
                               data-bs-toggle="modal"
                               data-bs-target="#detail-modal"
                               th:onclick="|showDetail('${daftarMatpel.id}')|"
+                              sec:authorize="hasRole('ADMIN')"
                             >
                               Update
                             </button>
@@ -280,6 +283,7 @@
                               data-bs-toggle="modal"
                               data-bs-target="#detail-modal"
                               th:onclick="|showDetail('${daftarMatpel.id}')|"
+                              sec:authorize="hasRole('ADMIN')"
                             >
                               Delete
                             </button>
