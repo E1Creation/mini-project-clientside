@@ -222,7 +222,6 @@
 
           <!-- Begin Page Content -->
           <div class="container-fluid">
-
             <!-- Content Row -->
             <div class="container">
               <div class="row">
@@ -230,7 +229,16 @@
                   <h1 style="text-align: center; color: #1e2ebc">
                     <b>Daftar Mata Pelajaran</b>
                   </h1>
+<<<<<<< HEAD
                   <br>
+=======
+                  <div class="d-flex justify-content-end">
+                    <button class="btn btn-success">
+                      Create Mata Pelajaran
+                    </button>
+                  </div>
+
+>>>>>>> 1b7466c13161e55b12d6bb4c5ea341e9fd588582
                   <div class="table-responsive">
                     <table
                       id="table-daftar-siswa"
@@ -241,15 +249,43 @@
                         <th>Kode Mata Pelajaran</th>
                         <th>Nama Mata Pelajaran</th>
                         <th>Guru Pengampu</th>
+                        <th>Action</th>
                       </thead>
                       <tbody th:each="daftarMatpel : ${matapelajaran}">
                         <tr>
                           <td th:text="${daftarMatpel.id}">Mohsin</td>
                           <td th:text="${daftarMatpel.nama}">1234</td>
+                          <td th:text="${daftarMatpel.entitas[0].nama}">
+                            1234
+                          </td>
                           <td>
-                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Detail
-                              </button>
+                            <button
+                              type="button"
+                              class="btn btn-primary"
+                              data-bs-toggle="modal"
+                              data-bs-target="#detail-modal"
+                              th:onclick="|showDetail('${daftarMatpel.id}')|"
+                            >
+                              Detail
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-warning"
+                              data-bs-toggle="modal"
+                              data-bs-target="#detail-modal"
+                              th:onclick="|showDetail('${daftarMatpel.id}')|"
+                            >
+                              Update
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-danger"
+                              data-bs-toggle="modal"
+                              data-bs-target="#detail-modal"
+                              th:onclick="|showDetail('${daftarMatpel.id}')|"
+                            >
+                              Delete
+                            </button>
                           </td>
                         </tr>
                       </tbody>
@@ -293,7 +329,12 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
             Select "Logout" below if you are ready to end your current session.
@@ -306,26 +347,41 @@
     </div>
 
     <!-- Modal Detail Guru Pengampu -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="detail-modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
+<<<<<<< HEAD
             <h5 class="modal-title" id="exampleModalLabel" style="color :#1E2EBC;"><b>Guru Pengampu</b></h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <table class="table">
               <thead style="color: #1E2EBC">
+=======
+            <h5 class="modal-title" id="exampleModalLabel">Guru Pengampu</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p id="nama-matapelajaran">contoh</p>
+            <table class="table table-hover">
+              <thead style="color: #1e2ebc">
+>>>>>>> 1b7466c13161e55b12d6bb4c5ea341e9fd588582
                 <th>NIP</th>
                 <th>Nama Guru</th>
               </thead>
-              <tbody>
-                <tr>
-                  <td>Mohsin</td>
-                  <td>1234</td>
-                  </td>
-                </tr>
-              </tbody>
+              <tbody id="body-guru"></tbody>
             </table>
           </div>
         </div>
@@ -333,14 +389,11 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/admin-page.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -352,7 +405,8 @@
       integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
       crossorigin="anonymous"
     ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/daftar-matpel.js"></script>
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
   </body>
 </html>

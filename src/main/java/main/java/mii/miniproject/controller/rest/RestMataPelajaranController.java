@@ -17,7 +17,7 @@ import main.java.mii.miniproject.service.MataPelajaranService;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/mata-pelajaran")
+@RequestMapping("/api/matapelajaran")
 public class RestMataPelajaranController {
     private MataPelajaranService mataPelajaranService;
 

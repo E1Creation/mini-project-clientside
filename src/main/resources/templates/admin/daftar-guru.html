@@ -238,7 +238,11 @@
                         <th>Kontak</th>
                         <th sec:authorize="hasRole('ADMIN')">Edit</th>
                       </thead>
+<<<<<<< HEAD
                       <tbody th:each="daftarGuru : ${guru}" style="color:black ;">
+=======
+                      <tbody th:each="daftarGuru : ${guru}">
+>>>>>>> 1b7466c13161e55b12d6bb4c5ea341e9fd588582
                         <tr>
                           <td th:text="${daftarGuru.nama}">Mohsin</td>
                           <td th:text="${daftarGuru.nomorInduk}">1234</td>

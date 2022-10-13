@@ -54,6 +54,10 @@ $("#select-kelas").on("change", () => {
     dataType: "json",
     success: (result) => {
       console.log(result);
+      let biokelas = `
+      <p>Kelas : ${result.tingkatan} ${result.kode} </p>
+      `;
+      $("#biokelas").html(biokelas);
       $.each(result.jadwalPelajarans, function (i, val) {
         console.log(val);
         data += `
