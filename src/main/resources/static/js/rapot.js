@@ -18,6 +18,9 @@ $(document).ready(function () {
         data: "nilai",
       },
       {
+        data: "entitas.nama",
+      },
+      {
         data: "mataPelajarans.entitas[0].nama",
       },
       // {

@@ -1,14 +1,14 @@
 $(document).ready(function () {
-  val = 0;
+  let initialValue = 1;
   let select = "";
   $.ajax({
     url: "/api/kelas",
     method: "GET",
     dataType: "json",
     success: (result) => {
-      console.log(result[val]);
+      console.log(result[0]);
       let biokelas = `
-      <p>Kelas : ${result[val].tingkatan} ${result[val].kode} </p>
+      <p>Kelas : ${result[0].tingkatan} ${result[0].kode} </p>
       `;
       $("#biokelas").html(biokelas);
       $.each(result, function (i, val) {
@@ -17,34 +17,60 @@ $(document).ready(function () {
         `;
       });
       $("#select-kelas").html(select);
-      val = $("#select-kelas").val();
-      console.log(val);
     },
   });
+  console.log("jalan");
+  getKelasById();
+});
+function getKelasById() {
   let data = "";
   $.ajax({
-    url: "/api/kelas",
+    url: "/api/kelas/" + 1,
     method: "GET",
     dataType: "json",
     success: (result) => {
       console.log(result);
-      $.each(result[0].jadwalPelajarans, function (i, val) {
+      $.each(result.jadwalPelajarans, function (i, val) {
         console.log(val);
         data += `
-          <tr>
-            <td>${i + 1}</td>
-            <td>${val.mataPelajarans.nama}</td>
-            <td>${val.hari}</td>
-            <td>${val.jamMasuk}</td>
-            <td>${val.jamKeluar}</td>
-          </tr>
-        `;
+            <tr>
+              <td>${i + 1}</td>
+              <td>${val.mataPelajarans.nama}</td>
+              <td>${val.hari}</td>
+              <td>${val.jamMasuk}</td>
+              <td>${val.jamKeluar}</td>
+            </tr>
+          `;
       });
       $("#table-jadwal-pelajaran").html(data);
     },
   });
-  console.log("jalan");
+}
+$("#select-kelas").on("change", () => {
+  let data = "";
+  $.ajax({
+    url: "/api/kelas/" + $("#select-kelas").val() ?? 1,
+    method: "GET",
+    dataType: "json",
+    success: (result) => {
+      console.log(result);
+      $.each(result.jadwalPelajarans, function (i, val) {
+        console.log(val);
+        data += `
+            <tr>
+              <td>${i + 1}</td>
+              <td>${val.mataPelajarans.nama}</td>
+              <td>${val.hari}</td>
+              <td>${val.jamMasuk}</td>
+              <td>${val.jamKeluar}</td>
+            </tr>
+          `;
+      });
+      $("#table-jadwal-pelajaran").html(data);
+    },
+  });
 });
+
 // $("#table-manage-user").DataTable({
 //   ajax: {
 //     url: "/api/kelas",
