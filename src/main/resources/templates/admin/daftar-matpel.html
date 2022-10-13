@@ -282,7 +282,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
-                  <h1 style="text-align: center">
+                  <h1 style="text-align: center; color: #1E2EBC">
                     <b>Daftar Mata Pelajaran</b>
                   </h1>
                   <div class="table-responsive">
@@ -291,16 +291,16 @@
                       class="table table-primary table-striped"
                       style="margin-top: 50"
                     >
-                      <thead>
-                        <th>id</th>
+                      <thead style="color: #1E2EBC">
+                        <th>Kode Mata Pelajaran</th>
                         <th>Nama Mata Pelajaran</th>
                         <th>Guru Pengampu</th>
                       </thead>
-                      <tbody>
+                      <tbody th:each="daftarMatpel : ${matapelajaran}">
                         <tr>
-                          <td>Mohsin</td>
-                          <td>1234</td>
-                          <td>mohsin@gmail.com</td>
+                          <td th:text="${daftarMatpel.id}">Mohsin</td>
+                          <td th:text="${daftarMatpel.nama}">1234</td>
+                          <td th:text="${daftarMatpel.nama}">mohsin@gmail.com</td>
                         </tr>
                       </tbody>
                     </table>
