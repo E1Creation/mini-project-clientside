@@ -238,11 +238,9 @@
                         <th>Kontak</th>
                         <th sec:authorize="hasRole('ADMIN')">Action</th>
                       </thead>
-<<<<<<< HEAD
                       <tbody th:each=" daftarSiswa : ${siswa}" style="color: black;">
-=======
                       <tbody th:each=" daftarSiswa : ${siswa}">
->>>>>>> 1b7466c13161e55b12d6bb4c5ea341e9fd588582
+                      <tbody th:each=" daftarSiswa : ${siswa}">
                         <tr>
                           <td th:text="${daftarSiswa.nama}">Mohsin</td>
                           <td th:text="${daftarSiswa.nomorInduk}">1234</td>
@@ -378,10 +376,7 @@
         </div>
       </div>
     </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> 1b7466c13161e55b12d6bb4c5ea341e9fd588582
     <!-- Logout Modal-->
     <div
       class="modal fade"

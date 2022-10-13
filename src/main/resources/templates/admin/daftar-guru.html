@@ -236,14 +236,11 @@
                         <th>Email</th>
                         <th>Alamat</th>
                         <th>Kontak</th>
-                        <th sec:authorize="hasRole('ADMIN')">Edit</th>
+                        <th sec:authorize="hasRole('ADMIN')">Action</th>
                       </thead>
-<<<<<<< HEAD
                       <tbody th:each="daftarGuru : ${guru}" style="color:black ;">
-=======
                       <tbody th:each="daftarGuru : ${guru}">
->>>>>>> 1b7466c13161e55b12d6bb4c5ea341e9fd588582
-                        <tr>
+                      <tbody th:each="daftarGuru : ${guru}">
                           <td th:text="${daftarGuru.nama}">Mohsin</td>
                           <td th:text="${daftarGuru.nomorInduk}">1234</td>
                           <td th:text="${daftarGuru.email}">
