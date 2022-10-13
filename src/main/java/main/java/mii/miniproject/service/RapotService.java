@@ -14,48 +14,53 @@ import main.java.mii.miniproject.model.Rapot;
 
 @Service
 public class RapotService {
-    private RestTemplate restTemplate;
+        private RestTemplate restTemplate;
 
         @Value("${server.baseUrl}/rapot")
         private String url;
-    
+
         @Autowired
         public RapotService(RestTemplate restTemplate) {
-            this.restTemplate = restTemplate;
+                this.restTemplate = restTemplate;
         }
-    
+
         public List<Rapot> getAll() {
-            return restTemplate
-                    .exchange(url, HttpMethod.GET, null,
-                            new ParameterizedTypeReference<List<Rapot>>() {
-                            }).getBody();
+                return restTemplate
+                                .exchange(url, HttpMethod.GET, null,
+                                                new ParameterizedTypeReference<List<Rapot>>() {
+                                                })
+                                .getBody();
         }
-    
+
         public Rapot getById(Long id) {
-            return restTemplate
-                    .exchange(url.concat("/" + id), HttpMethod.GET, null,
-                            new ParameterizedTypeReference<Rapot>() {
-                            }).getBody();
+                return restTemplate
+                                .exchange(url.concat("/" + id), HttpMethod.GET, null,
+                                                new ParameterizedTypeReference<Rapot>() {
+                                                })
+                                .getBody();
         }
-    
+
         public Rapot create(Rapot rapot) {
-            return restTemplate
-                    .exchange(url, HttpMethod.POST, new HttpEntity(rapot),
-                            new ParameterizedTypeReference<Rapot>() {
-                            }).getBody();
+                return restTemplate
+                                .exchange(url, HttpMethod.POST, new HttpEntity(rapot),
+                                                new ParameterizedTypeReference<Rapot>() {
+                                                })
+                                .getBody();
         }
-    
+
         public Rapot update(Long id, Rapot rapot) {
-            return restTemplate
-                    .exchange(url.concat("/" + id), HttpMethod.PUT, new HttpEntity(rapot),
-                            new ParameterizedTypeReference<Rapot>() {
-                            }).getBody();
+                return restTemplate
+                                .exchange(url.concat("/" + id), HttpMethod.PUT, new HttpEntity(rapot),
+                                                new ParameterizedTypeReference<Rapot>() {
+                                                })
+                                .getBody();
         }
-    
+
         public Rapot delete(Long id) {
-            return restTemplate
-                    .exchange(url.concat("/" + id), HttpMethod.DELETE, null,
-                            new ParameterizedTypeReference<Rapot>() {
-                            }).getBody();
+                return restTemplate
+                                .exchange(url.concat("/" + id), HttpMethod.DELETE, null,
+                                                new ParameterizedTypeReference<Rapot>() {
+                                                })
+                                .getBody();
         }
 }

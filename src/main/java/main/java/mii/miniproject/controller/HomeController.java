@@ -18,9 +18,9 @@ public class HomeController {
 
     @GetMapping("/dashboard")
     public String dashboard(Model model) {
-        String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        System.out.println("nama : " + username);
-        model.addAttribute("username", username);
+        // String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        // System.out.println("nama : " + username);
+        // model.addAttribute("username", username);
         return "admin/index";
     }
 

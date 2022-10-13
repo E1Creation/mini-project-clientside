@@ -19,14 +19,14 @@ $("#register-button").click((e) => {
     repeat password : ${repeatPassword}
   `);
   if (
-    nama == null ||
-    nomorInduk == null ||
-    alamat == null ||
-    email == null ||
-    noHp == null ||
-    username == null ||
-    password == null ||
-    repeatPassword == null
+    nama == "" ||
+    nomorInduk == "" ||
+    alamat == "" ||
+    email == "" ||
+    noHp == "" ||
+    username == "" ||
+    password == "" ||
+    repeatPassword == ""
   ) {
     Swal.fire({
       position: "center",

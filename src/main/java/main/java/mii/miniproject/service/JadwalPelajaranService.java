@@ -14,48 +14,53 @@ import main.java.mii.miniproject.model.JadwalPelajaran;
 
 @Service
 public class JadwalPelajaranService {
-    private RestTemplate restTemplate;
+        private RestTemplate restTemplate;
 
-    @Value("${server.baseUrl}/jadwal-pelajaran")
-    private String url;
+        @Value("${server.baseUrl}/jadwalpelajaran")
+        private String url;
 
-    @Autowired
-    public JadwalPelajaranService(RestTemplate restTemplate){
-        this.restTemplate=restTemplate;
-    }
+        @Autowired
+        public JadwalPelajaranService(RestTemplate restTemplate) {
+                this.restTemplate = restTemplate;
+        }
 
-    public List<JadwalPelajaran> getAll() {
-        return restTemplate
-                .exchange(url, HttpMethod.GET, null,
-                        new ParameterizedTypeReference<List<JadwalPelajaran>>() {
-                        }).getBody();
-    }
+        public List<JadwalPelajaran> getAll() {
+                return restTemplate
+                                .exchange(url, HttpMethod.GET, null,
+                                                new ParameterizedTypeReference<List<JadwalPelajaran>>() {
+                                                })
+                                .getBody();
+        }
 
-    public JadwalPelajaran getById(Long id) {
-        return restTemplate
-                .exchange(url.concat("/" + id), HttpMethod.GET, null,
-                        new ParameterizedTypeReference<JadwalPelajaran>() {
-                        }).getBody();
-    }
+        public JadwalPelajaran getById(Long id) {
+                return restTemplate
+                                .exchange(url.concat("/" + id), HttpMethod.GET, null,
+                                                new ParameterizedTypeReference<JadwalPelajaran>() {
+                                                })
+                                .getBody();
+        }
 
-    public JadwalPelajaran create(JadwalPelajaran jadwalPelajaran) {
-        return restTemplate
-                .exchange(url, HttpMethod.POST, new HttpEntity(jadwalPelajaran),
-                        new ParameterizedTypeReference<JadwalPelajaran>() {
-                        }).getBody();
-    }
+        public JadwalPelajaran create(JadwalPelajaran jadwalPelajaran) {
+                return restTemplate
+                                .exchange(url, HttpMethod.POST, new HttpEntity(jadwalPelajaran),
+                                                new ParameterizedTypeReference<JadwalPelajaran>() {
+                                                })
+                                .getBody();
+        }
 
-    public JadwalPelajaran update(Long id, JadwalPelajaran jadwalPelajaran) {
-        return restTemplate
-                .exchange(url.concat("/" + id), HttpMethod.PUT, new HttpEntity(jadwalPelajaran),
-                        new ParameterizedTypeReference<JadwalPelajaran>() {
-                        }).getBody();
-    }
+        public JadwalPelajaran update(Long id, JadwalPelajaran jadwalPelajaran) {
+                return restTemplate
+                                .exchange(url.concat("/" + id), HttpMethod.PUT, new HttpEntity(jadwalPelajaran),
+                                                new ParameterizedTypeReference<JadwalPelajaran>() {
+                                                })
+                                .getBody();
+        }
 
-    public JadwalPelajaran delete(Long id) {
-        return restTemplate
-                .exchange(url.concat("/" + id), HttpMethod.DELETE, null,
-                        new ParameterizedTypeReference<JadwalPelajaran>() {
-                        }).getBody();
-    }    
+        public JadwalPelajaran delete(Long id) {
+                return restTemplate
+                                .exchange(url.concat("/" + id), HttpMethod.DELETE, null,
+                                                new ParameterizedTypeReference<JadwalPelajaran>() {
+                                                })
+                                .getBody();
+        }
 }

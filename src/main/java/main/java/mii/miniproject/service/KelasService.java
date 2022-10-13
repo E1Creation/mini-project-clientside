@@ -16,46 +16,51 @@ import main.java.mii.miniproject.model.Kelas;
 public class KelasService {
         private RestTemplate restTemplate;
 
-        @Value("${server.baseUrl}/jadwal-pelajaran")
+        @Value("${server.baseUrl}/kelas")
         private String url;
-    
+
         @Autowired
-        public KelasService(RestTemplate restTemplate){
-            this.restTemplate=restTemplate;
+        public KelasService(RestTemplate restTemplate) {
+                this.restTemplate = restTemplate;
         }
-    
+
         public List<Kelas> getAll() {
-            return restTemplate
-                    .exchange(url, HttpMethod.GET, null,
-                            new ParameterizedTypeReference<List<Kelas>>() {
-                            }).getBody();
+                return restTemplate
+                                .exchange(url, HttpMethod.GET, null,
+                                                new ParameterizedTypeReference<List<Kelas>>() {
+                                                })
+                                .getBody();
         }
-    
+
         public Kelas getById(Long id) {
-            return restTemplate
-                    .exchange(url.concat("/" + id), HttpMethod.GET, null,
-                            new ParameterizedTypeReference<Kelas>() {
-                            }).getBody();
+                return restTemplate
+                                .exchange(url.concat("/" + id), HttpMethod.GET, null,
+                                                new ParameterizedTypeReference<Kelas>() {
+                                                })
+                                .getBody();
         }
-    
+
         public Kelas create(Kelas kelas) {
-            return restTemplate
-                    .exchange(url, HttpMethod.POST, new HttpEntity(kelas),
-                            new ParameterizedTypeReference<Kelas>() {
-                            }).getBody();
+                return restTemplate
+                                .exchange(url, HttpMethod.POST, new HttpEntity(kelas),
+                                                new ParameterizedTypeReference<Kelas>() {
+                                                })
+                                .getBody();
         }
-    
+
         public Kelas update(Long id, Kelas kelas) {
-            return restTemplate
-                    .exchange(url.concat("/" + id), HttpMethod.PUT, new HttpEntity(kelas),
-                            new ParameterizedTypeReference<Kelas>() {
-                            }).getBody();
+                return restTemplate
+                                .exchange(url.concat("/" + id), HttpMethod.PUT, new HttpEntity(kelas),
+                                                new ParameterizedTypeReference<Kelas>() {
+                                                })
+                                .getBody();
         }
-    
+
         public Kelas delete(Long id) {
-            return restTemplate
-                    .exchange(url.concat("/" + id), HttpMethod.DELETE, null,
-                            new ParameterizedTypeReference<Kelas>() {
-                            }).getBody();
-        }    
+                return restTemplate
+                                .exchange(url.concat("/" + id), HttpMethod.DELETE, null,
+                                                new ParameterizedTypeReference<Kelas>() {
+                                                })
+                                .getBody();
+        }
 }
