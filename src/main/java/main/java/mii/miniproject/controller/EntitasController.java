@@ -21,14 +21,18 @@ public class EntitasController {
 
     @GetMapping("/guru")
     public String guru(Model model, Long id) {
-        model.addAttribute("guru",entitasService.getAllByRole(2L));
+        model.addAttribute("guru", entitasService.getAllByRole(2L));
         return "admin/daftar-guru";
     }
 
     @GetMapping("/siswa")
     public String siswa(Model model, Long id) {
-        model.addAttribute("siswa",entitasService.getAllByRole(1L));
+        model.addAttribute("siswa", entitasService.getAllByRole(1L));
         return "admin/daftar-siswa";
     }
-}
 
+    @GetMapping("/manageuser")
+    public String manageUser() {
+        return "admin/mengelola-user";
+    }
+}
