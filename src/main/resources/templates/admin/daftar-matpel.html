@@ -230,7 +230,7 @@
                     <b>Daftar Mata Pelajaran</b>
                   </h1>
                   <br>
-                  <div class="d-flex justify-content-end">
+                  <div class="d-flex justify-content-end" sec:authorize="hasRole('ADMIN')">
                     <button
                       class="btn btn-success"
                       data-bs-target="#create-modal"
@@ -251,7 +251,7 @@
                         <th>Kode Mata Pelajaran</th>
                         <th>Nama Mata Pelajaran</th>
                         <th>Guru Pengampu</th>
-                        <th>Action</th>
+                        <th sec:authorize="hasRole('ADMIN')">Action</th>
                       </thead>
                       <tbody th:each="daftarMatpel : ${matapelajaran}">
                         <tr>
@@ -260,7 +260,7 @@
                           <td th:text="${daftarMatpel.entitas[0].nama}">
                             1234
                           </td>
-                          <td>
+                          <td sec:authorize="hasRole('ADMIN')">
                             <button
                               type="button"
                               class="btn btn-primary"

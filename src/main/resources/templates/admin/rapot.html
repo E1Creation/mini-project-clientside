@@ -240,6 +240,14 @@
                 <div class="col-md-12">
                   <h1 style="text-align: center;color: #1e2ebc"><b>Rapot Nilai</b></h1>
                   <br>
+                  <div class="d-flex justify-content-end" sec:authorize="hasRole('ADMIN')">
+                    <button
+                      class="btn btn-success"
+                      data-bs-target="#create-modal"
+                      data-bs-toggle="modal"
+                    >
+                      Create Mata Pelajaran
+                    </button>
                   <div class="table-responsive">
                     <table
                       id="table-rapot"
@@ -254,6 +262,7 @@
                         <th>Semester</th>
                         <th>Action</th>
                       </thead>
+                    
                     </table>
                   </div>
                 </div>
