@@ -223,7 +223,7 @@
           <!-- Begin Page Content -->
           <div class="container-fluid">
             <!-- Content Row -->
-            <div class="container">
+            <div class="container-fluid">
               <div class="row">
                 <div class="col-md-12">
                   <h1 style="text-align: center; color: #1e2ebc">
@@ -255,7 +255,7 @@
                       </thead>
                       <tbody th:each="daftarMatpel : ${matapelajaran}">
                         <tr>
-                          <td th:text="${daftarMatpel.id}">Mohsin</td>
+                          <td  th:text="${daftarMatpel.id}">Mohsin</td>
                           <td th:text="${daftarMatpel.nama}">1234</td>
                           <td th:text="${daftarMatpel.entitas[0].nama}">
                             1234
@@ -270,11 +270,23 @@
                             >
                               Detail
                             </button>
-
+                            <button
+                              type="button"
+                              class="btn btn-warning"
+                              data-bs-toggle="modal"
+                              data-bs-target="#detail-modal"
+                              th:onclick="|showDetail('${daftarMatpel.id}')|"
+                              sec:authorize="hasRole('ADMIN')"
+                            >
+                              Update
+                            </button>
                             <button
                               type="button"
                               class="btn btn-danger"
-                              th:onclick="|deleteById('${daftarMatpel.id}')|"
+                              data-bs-toggle="modal"
+                              data-bs-target="#detail-modal"
+                              th:onclick="|showDetail('${daftarMatpel.id}')|"
+                              sec:authorize="hasRole('ADMIN')"
                             >
                               Delete
                             </button>
