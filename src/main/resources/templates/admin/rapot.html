@@ -57,9 +57,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-          <a class="nav-link" href="/dashboard">
-            <span>Dashboard</span></a
-          >
+          <a class="nav-link" href="/dashboard"> <span>Dashboard</span></a>
         </li>
 
         <!-- Divider -->
@@ -149,8 +147,7 @@
         <hr class="sidebar-divider d-none d-md-block" />
 
         <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-        </div>
+        <div class="text-center d-none d-md-inline"></div>
       </ul>
       <!-- End of Sidebar -->
 
@@ -185,8 +182,10 @@
                 >
                   <i class="fas fa-search fa-fw"></i>
                 </a>
-               
-              <!-- Nav Item - User Information -->
+
+                <!-- Nav Item - User Information -->
+              </li>
+
               <li class="nav-item dropdown no-arrow">
                 <a
                   class="nav-link"
@@ -238,21 +237,29 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-md-12">
-                  <h1 style="text-align: center;color: #1e2ebc"><b>Rapot Nilai</b></h1>
-                  <br>
-                  <div class="d-flex justify-content-end" sec:authorize="hasRole('ADMIN')">
+                  <h1 style="text-align: center; color: #1e2ebc">
+                    <b>Rapot Nilai</b>
+                  </h1>
+                  <br />
+                  <div
+                    class="d-flex justify-content-end"
+                    sec:authorize="hasRole('ADMIN')"
+                  >
                     <button
                       class="btn btn-success"
                       data-bs-target="#create-modal"
                       data-bs-toggle="modal"
+                      th:onclick="|showSelectInput()|"
                     >
                       Create Mata Pelajaran
                     </button>
+                  </div>
                   <div class="table-responsive">
                     <table
                       id="table-rapot"
                       class="table"
-                      style="margin-top: 50">                   
+                      style="margin-top: 50"
+                    >
                       <thead style="color: #1e2ebc" class="table-primary">
                         <th>No</th>
                         <th>Nama Pelajaran</th>
@@ -260,9 +267,8 @@
                         <th>Nama Siswa</th>
                         <th>Guru Pengampu</th>
                         <th>Semester</th>
-                        <th >Action</th>
+                        <th>Action</th>
                       </thead>
-                    
                     </table>
                   </div>
                 </div>
@@ -304,7 +310,12 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
             Select "Logout" below if you are ready to end your current session.
@@ -317,34 +328,71 @@
     </div>
 
     <!-- Modal Update -->
-    <div class="modal fade" id="updateRapot" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="updateRapot"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel" style="color: #1E2EBC">Edit Rapot</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5
+              class="modal-title"
+              id="exampleModalLabel"
+              style="color: #1e2ebc"
+            >
+              Edit Rapot
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label" style="color:black ;">Nama Mata Pelajaran</label>
-                <input type="text" class="form-control" id="namaMatpel">
+                <label
+                  for="exampleInputEmail1"
+                  class="form-label"
+                  style="color: black"
+                  >Nama Mata Pelajaran</label
+                >
+                <input type="text" class="form-control" id="namaMatpel" />
               </div>
               <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label" style="color:black ;">Nilai</label>
-                <input type="text" class="form-control" id="nilaiMatpel">
+                <label
+                  for="exampleInputPassword1"
+                  class="form-label"
+                  style="color: black"
+                  >Nilai</label
+                >
+                <input type="text" class="form-control" id="nilaiMatpel" />
               </div>
               <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label" style="color:black ;">Nama Siswa</label>
-                <input type="text" class="form-control" id="namaSiswa">
+                <label
+                  for="exampleInputPassword1"
+                  class="form-label"
+                  style="color: black"
+                  >Nama Siswa</label
+                >
+                <input type="text" class="form-control" id="namaSiswa" />
               </div>
               <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label" style="color:black ;">Guru Pengampu</label>
-                <input type="text" class="form-control" id="guruPengampu">
+                <label
+                  for="exampleInputPassword1"
+                  class="form-label"
+                  style="color: black"
+                  >Guru Pengampu</label
+                >
+                <input type="text" class="form-control" id="guruPengampu" />
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <div>
+                <button type="submit" class="btn btn-primary">Submit</button>
               </div>
-              
             </form>
           </div>
         </div>
