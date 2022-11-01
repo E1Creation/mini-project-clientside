@@ -75,6 +75,19 @@ $("#select-kelas").on("change", () => {
   });
 });
 
+function create_kelas() {
+  $.ajax({
+    url: "/api/jadwalpelajaran/matpel",
+    method: "POST",
+    dataType: "json",
+    contentType: "application/json",
+    data: JSON.stringify({}),
+    success: (result) => {
+      console.log(result);
+    },
+  });
+}
+
 // $("#table-manage-user").DataTable({
 //   ajax: {
 //     url: "/api/kelas",

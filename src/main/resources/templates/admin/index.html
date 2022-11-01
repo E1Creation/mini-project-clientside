@@ -146,8 +146,7 @@
         <hr class="sidebar-divider d-none d-md-block" />
 
         <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-        </div>
+        <div class="text-center d-none d-md-inline"></div>
       </ul>
       <!-- End of Sidebar -->
 
@@ -214,7 +213,14 @@
           <!-- Begin Page Content -->
           <div class="container-fluid">
             <!-- Content Row -->
-            <div class="row" style="display: flex; justify-content: center; align-items: center;">
+            <div
+              class="row"
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
               <!-- Jumlah Guru -->
               <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-left-primary shadow h-100 py-2">
@@ -226,7 +232,10 @@
                         >
                           Jumlah Guru
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        <div
+                          class="h5 mb-0 font-weight-bold text-gray-800"
+                          id="jumlah-guru"
+                        >
                           30 Orang
                         </div>
                       </div>
@@ -247,7 +256,10 @@
                         >
                           Jumlah Siswa
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        <div
+                          class="h5 mb-0 font-weight-bold text-gray-800"
+                          id="jumlah-siswa"
+                        >
                           300 Orang
                         </div>
                       </div>
@@ -266,9 +278,12 @@
                         <div
                           class="text-xs font-weight-bold text-success text-uppercase mb-1"
                         >
-                          Jumlah Siswa
+                          Jumlah Mata Pelajaran
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        <div
+                          class="h5 mb-0 font-weight-bold text-gray-800"
+                          id="jumlah-matapelajaran"
+                        >
                           300 Orang
                         </div>
                       </div>
@@ -343,6 +358,8 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -361,7 +378,7 @@
     <!-- Custom scripts for all pages-->
     <script src="js/admin-page.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/index.js"></script>
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
   </body>
 </html>

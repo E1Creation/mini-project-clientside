@@ -41,9 +41,8 @@
         class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
         id="accordionSidebar"
       >
-
-         <!-- Sidebar - Brand -->
-         <a class="sidebar-brand d-flex align-items-center" href="/dashboard">
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center" href="/dashboard">
           <div class="image">
             <img
               src="image\logo-white-removebg-preview.png"
@@ -175,8 +174,10 @@
                 >
                   <i class="fas fa-search fa-fw"></i>
                 </a>
-                
-              <!-- Nav Item - User Information -->
+
+                <!-- Nav Item - User Information -->
+              </li>
+
               <li class="nav-item dropdown no-arrow">
                 <a
                   class="nav-link"
@@ -229,8 +230,11 @@
                   <h1 style="text-align: center; color: #1e2ebc">
                     <b>Daftar Mata Pelajaran</b>
                   </h1>
-                  <br>
-                  <div class="d-flex justify-content-end" sec:authorize="hasRole('ADMIN')">
+                  <br />
+                  <div
+                    class="d-flex justify-content-end"
+                    sec:authorize="hasRole('ADMIN')"
+                  >
                     <button
                       class="btn btn-success"
                       data-bs-target="#create-modal"
@@ -240,7 +244,7 @@
                       Create Mata Pelajaran
                     </button>
                   </div>
-                  <br>
+                  <br />
                   <div class="table-responsive">
                     <table
                       id="table-daftar-siswa"
@@ -255,7 +259,7 @@
                       </thead>
                       <tbody th:each="daftarMatpel : ${matapelajaran}">
                         <tr>
-                          <td  th:text="${daftarMatpel.id}">Mohsin</td>
+                          <td th:text="${daftarMatpel.id}">Mohsin</td>
                           <td th:text="${daftarMatpel.nama}">1234</td>
                           <td th:text="${daftarMatpel.entitas[0].nama}">
                             1234
@@ -270,22 +274,12 @@
                             >
                               Detail
                             </button>
-                            <button
-                              type="button"
-                              class="btn btn-warning"
-                              data-bs-toggle="modal"
-                              data-bs-target="#detail-modal"
-                              th:onclick="|showDetail('${daftarMatpel.id}')|"
-                              sec:authorize="hasRole('ADMIN')"
-                            >
-                              Update
-                            </button>
+
                             <button
                               type="button"
                               class="btn btn-danger"
                               data-bs-toggle="modal"
-                              data-bs-target="#detail-modal"
-                              th:onclick="|showDetail('${daftarMatpel.id}')|"
+                              th:onclick="|deleteById('${daftarMatpel.id}')|"
                               sec:authorize="hasRole('ADMIN')"
                             >
                               Delete
@@ -361,13 +355,13 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel" style="color :#1E2EBC;"><b>Guru Pengampu</b></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <table class="table">
-              <thead style="color: #1E2EBC">
-            <h5 class="modal-title" id="exampleModalLabel">Guru Pengampu</h5>
+            <h5
+              class="modal-title"
+              id="exampleModalLabel"
+              style="color: #1e2ebc"
+            >
+              <b>Guru Pengampu</b>
+            </h5>
             <button
               type="button"
               class="btn-close"
@@ -375,18 +369,7 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">
-            <p id="nama-matapelajaran">contoh</p>
-            <table class="table table-hover">
-              <thead style="color: #1e2ebc">
-            <h5 class="modal-title" id="exampleModalLabel">Guru Pengampu</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
+
           <div class="modal-body">
             <p id="nama-matapelajaran">contoh</p>
             <table class="table table-hover">

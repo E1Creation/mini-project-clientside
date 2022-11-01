@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import main.java.mii.miniproject.model.Entitas;
+import main.java.mii.miniproject.model.dto.response.CountEntitasMatpel;
 
 @Service
 public class EntitasService {
@@ -69,5 +70,12 @@ public class EntitasService {
                                                 new ParameterizedTypeReference<Entitas>() {
                                                 })
                                 .getBody();
+        }
+
+        public CountEntitasMatpel getCount() {
+                return restTemplate.exchange(url + "/count", HttpMethod.GET, null,
+                                new ParameterizedTypeReference<CountEntitasMatpel>() {
+
+                                }).getBody();
         }
 }

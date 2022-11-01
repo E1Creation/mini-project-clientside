@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.AllArgsConstructor;
 import main.java.mii.miniproject.model.Entitas;
+import main.java.mii.miniproject.model.dto.response.CountEntitasMatpel;
 import main.java.mii.miniproject.service.EntitasService;
 
 @RestController
@@ -49,5 +50,10 @@ public class RestEntitasController {
     @DeleteMapping("/{id}")
     public Entitas delete(@PathVariable Long id) {
         return entitasService.delete(id);
+    }
+
+    @GetMapping("/count")
+    public CountEntitasMatpel countEntitasMatpel() {
+        return entitasService.getCount();
     }
 }

@@ -41,8 +41,8 @@
         class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
         id="accordionSidebar"
       >
-         <!-- Sidebar - Brand -->
-         <a class="sidebar-brand d-flex align-items-center" href="/dashboard">
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center" href="/dashboard">
           <div class="image">
             <img
               src="image\logo-white-removebg-preview.png"
@@ -217,13 +217,13 @@
             <!-- Content Row -->
 
             <!-- Content Row -->
-            <div class="container">
+            <div class="container-fluid">
               <div class="row">
                 <div class="col-md-12">
                   <h1 style="text-align: center; color: #1e2ebc">
                     <b>Daftar Siswa</b>
                   </h1>
-                  <br>
+                  <br />
                   <div class="table-responsive">
                     <table
                       id="table-siswa"
@@ -238,8 +238,11 @@
                         <th>Kontak</th>
                         <th sec:authorize="hasRole('ADMIN')">Action</th>
                       </thead>
-                      <tbody th:each=" daftarSiswa : ${siswa}" style="color: black;">
-                      <tbody th:each=" daftarSiswa : ${siswa}">
+                      <tbody
+                        th:each=" daftarSiswa : ${siswa}"
+                        style="color: black"
+                      ></tbody>
+                      <tbody th:each=" daftarSiswa : ${siswa}"></tbody>
                       <tbody th:each=" daftarSiswa : ${siswa}">
                         <tr>
                           <td th:text="${daftarSiswa.nama}">Mohsin</td>

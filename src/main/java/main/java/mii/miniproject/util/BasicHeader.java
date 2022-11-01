@@ -6,6 +6,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
+import main.java.mii.miniproject.model.dto.response.UserData;
+
 /**
  *
  * @author MSI-JO
@@ -27,5 +29,10 @@ public class BasicHeader {
                 set("Authorization", "Basic " + token);
             }
         };
+    }
+
+    public static String accessToken() {
+        UserData userData = (UserData) SecurityContextHolder.getContext().getAuthentication().getDetails();
+        return userData.getAccess_token();
     }
 }

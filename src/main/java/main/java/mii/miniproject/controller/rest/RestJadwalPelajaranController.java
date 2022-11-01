@@ -13,11 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.AllArgsConstructor;
 import main.java.mii.miniproject.model.JadwalPelajaran;
+import main.java.mii.miniproject.model.dto.request.AddKelasMatpelToJadwal;
 import main.java.mii.miniproject.service.JadwalPelajaranService;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/jadwal-pelajaran")
+@RequestMapping("/api/jadwalpelajaran")
 public class RestJadwalPelajaranController {
     private JadwalPelajaranService jadwalPelajaranService;
 
@@ -34,6 +35,11 @@ public class RestJadwalPelajaranController {
     @PostMapping
     public JadwalPelajaran create(@RequestBody JadwalPelajaran jadwalPelajaran) {
         return jadwalPelajaranService.create(jadwalPelajaran);
+    }
+
+    @PostMapping("/kelasmatpel")
+    public JadwalPelajaran addingKelasToMatpel(@RequestBody AddKelasMatpelToJadwal addKelasMatpelToJadwal) {
+        return jadwalPelajaranService.addingMatpelToJadwal(addKelasMatpelToJadwal);
     }
 
     @PutMapping("/{id}")

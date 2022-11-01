@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import main.java.mii.miniproject.model.JadwalPelajaran;
+import main.java.mii.miniproject.model.dto.request.AddKelasMatpelToJadwal;
 
 @Service
 public class JadwalPelajaranService {
@@ -38,6 +39,16 @@ public class JadwalPelajaranService {
                                                 new ParameterizedTypeReference<JadwalPelajaran>() {
                                                 })
                                 .getBody();
+        }
+
+        public JadwalPelajaran addingMatpelToJadwal(AddKelasMatpelToJadwal addKelasMatpelToJadwal) {
+                return restTemplate
+                                .exchange(url + "/kelasmatpel", HttpMethod.POST, new HttpEntity(addKelasMatpelToJadwal),
+                                                new ParameterizedTypeReference<JadwalPelajaran>() {
+
+                                                })
+                                .getBody();
+
         }
 
         public JadwalPelajaran create(JadwalPelajaran jadwalPelajaran) {

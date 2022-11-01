@@ -57,9 +57,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-          <a class="nav-link" href="/dashboard">
-            <span>Dashboard</span></a
-          >
+          <a class="nav-link" href="/dashboard"> <span>Dashboard</span></a>
         </li>
 
         <!-- Divider -->
@@ -215,35 +213,52 @@
             <div class="container">
               <div class="col-md-12">
                 <div class="row">
-                  <h1 style="text-align: center; text-align: center; color: #1e2ebc"><b>Daftar Jadwal Kelas</b></h1>
-                  <br>
-                  <div class="col col-6" id="biokelas">test</div>
+                  <h1
+                    style="
+                      text-align: center;
+                      text-align: center;
+                      color: #1e2ebc;
+                    "
+                  >
+                    <b>Daftar Jadwal Kelas</b>
+                  </h1>
+
+                  <br />
+                  <div class="d-flex justify-content-between">
+                    <div class="col col-6" id="biokelas">test</div>
+
+                    <button
+                      class="btn btn-success"
+                      data-bs-target="#create-modal"
+                      data-bs-toggle="modal"
+                      th:onclick="|create_kelas()|"
+                    >
+                      Create Kelas
+                    </button>
+                  </div>
+
                   <div class="d-flex flex-column">
                     <p>Pilih Kelas :</p>
                     <select
-                    class="form-select"
-                    aria-label="Default select example"
-                    id="select-kelas"
-                  >
-                  </div>                
-                    <!-- <option selected>Open this select menu</option>
+                      class="form-select"
+                      aria-label="Default select example"
+                      id="select-kelas"
+                    ></select>
+                  </div>
+                  <!-- <option selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option> -->
-                  </select>
-                  <br>
+                  <br />
                   <div class="table-responsive">
-                    <table
-                      class="table"
-                      style="margin-top: 50"
-                    >
+                    <table class="table" style="margin-top: 50">
                       <thead style="color: #1e2ebc" class="table-primary">
                         <th>No</th>
                         <th>Mata Pelajaran</th>
                         <th>Hari</th>
                         <th>Jam Masuk</th>
                         <th>Jam Keluar</th>
-                        <th sec:authorize="hasRole('ADMIN')">Action</th>
+                        <!-- <th sec:authorize="hasRole('ADMIN')">Action</th> -->
                       </thead>
                       <tbody id="table-jadwal-pelajaran"></tbody>
                     </table>
@@ -273,6 +288,88 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fas fa-angle-up"></i>
     </a>
+    <!-- create kelas -->
+    <div
+      class="modal fade"
+      id="create-modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Guru Pengampu</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3 mt-3">
+                <input type="hidden" id="id-employee" />
+                <label for="hari" class="form-label">Hari:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="hari"
+                  placeholder="Masukkan nama hari"
+                  name="hari"
+                />
+              </div>
+
+              <div class="mb-3 mt-3">
+                <input type="hidden" id="id-employee" />
+                <label for="jamMasuk" class="form-label">Jam Masuk:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="jam-masuk"
+                  placeholder="Masukkan jam masuk"
+                  name="jam-masuk"
+                />
+              </div>
+              <div class="mb-3 mt-3">
+                <input type="hidden" id="id-employee" />
+                <label for="hari" class="form-label">jam keluar:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="jam-keluar"
+                  placeholder="Masukkan jam keluar"
+                  name="jam-keluar"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="matpel" class="form-label">Mata Pelajaran :</label>
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  id="select-matapelajaran"
+                ></select>
+              </div>
+              <div class="mb-3">
+                <label for="kelas" class="form-label">Kelas :</label>
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  id="list-kelas"
+                ></select>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="button-create">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end create kelas -->
 
     <!-- Logout Modal-->
     <div

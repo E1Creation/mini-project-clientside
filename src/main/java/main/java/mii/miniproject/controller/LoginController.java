@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.AllArgsConstructor;
 import main.java.mii.miniproject.model.dto.request.LoginRequest;
@@ -52,6 +51,20 @@ public class LoginController {
         List<String> roles = authentication.getAuthorities()
                 .stream().map(authority -> authority.getAuthority())
                 .collect(Collectors.toList());
+
+        return "redirect:/dashboard";
+    }
+
+    @PostMapping("/login/jwt")
+    public String loginWithJWT(LoginRequest loginRequest) {
+        if (!loginService.loginWithJWT(loginRequest)) {
+            return "redirect:/login?error=true";
+        }
+        // Authentication authentication =
+        // SecurityContextHolder.getContext().getAuthentication();
+        // List<String> roles = authentication.getAuthorities()
+        // .stream().map(authority -> authority.getAuthority())
+        // .collect(Collectors.toList());
 
         return "redirect:/dashboard";
     }
