@@ -26,6 +26,11 @@ public class EntitasService {
         }
 
         public List<Entitas> getAll() {
+                System.out.println(restTemplate
+                                .exchange(url, HttpMethod.GET, null,
+                                                new ParameterizedTypeReference<List<Entitas>>() {
+                                                })
+                                .getBody());
                 return restTemplate
                                 .exchange(url, HttpMethod.GET, null,
                                                 new ParameterizedTypeReference<List<Entitas>>() {

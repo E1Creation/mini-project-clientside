@@ -113,7 +113,7 @@ public class LoginService {
     }
 
     public boolean Register(Register register) {
-        ResponseEntity<Entitas> respon = restTemplate.exchange(url.concat("/entitas"), HttpMethod.POST,
+        ResponseEntity<Entitas> respon = restTemplate.exchange(url.concat("/entitas/registrasi"), HttpMethod.POST,
                 new HttpEntity(register),
                 new ParameterizedTypeReference<Entitas>() {
                 });

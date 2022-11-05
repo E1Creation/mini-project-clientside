@@ -20,7 +20,8 @@ public class RequestInterceptor implements ClientHttpRequestInterceptor {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         System.out.println(request.getURI().getPath());
         System.out.println(request.getMethod());
-        if (!request.getURI().getPath().equals("/login") && !request.getURI().getPath().equals("/entitas")
+        if (!request.getURI().getPath().equals("/login")
+                && !request.getURI().getPath().equals("/entitas/registrasi")
                 && !request.getURI().getPath().equals("/login/jwt")) {
             System.out.println("Access_token :" + BasicHeader.accessToken());
             request.getHeaders().add("Authorization", "Bearer " +

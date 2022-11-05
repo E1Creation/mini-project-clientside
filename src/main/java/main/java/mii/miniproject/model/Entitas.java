@@ -18,7 +18,7 @@ public class Entitas {
     private String noHp;
 
     List<MataPelajaran> mataPelajarans;
-
+    
     private User user;
     private List<Rapot> rapots;
 }
