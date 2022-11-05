@@ -26,7 +26,7 @@ public class RequestInterceptor implements ClientHttpRequestInterceptor {
             System.out.println("Access_token :" + BasicHeader.accessToken());
             request.getHeaders().add("Authorization", "Bearer " +
                     BasicHeader.accessToken());
-
+            System.out.println("menggunakkan header");
             // request.getHeaders().add("Authorization", "Basic " +
             // BasicHeader.createBasicToken(authentication.getPrincipal().toString(),
             // authentication.getCredentials().toString()));

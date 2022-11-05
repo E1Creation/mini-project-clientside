@@ -117,6 +117,8 @@ public class LoginService {
                 new HttpEntity(register),
                 new ParameterizedTypeReference<Entitas>() {
                 });
+        System.out.println(respon.getStatusCode());
+        System.out.println(respon.getBody());
         if (respon.getStatusCode() == HttpStatus.CREATED) {
             return true;
         }

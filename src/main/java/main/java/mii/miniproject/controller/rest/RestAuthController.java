@@ -11,7 +11,7 @@ import main.java.mii.miniproject.service.LoginService;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("api")
+@RequestMapping("/api")
 public class RestAuthController {
     private LoginService service;
 
